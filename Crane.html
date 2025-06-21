@@ -1,0 +1,511 @@
+<!-- <style>
+  /* Carousel Container Styling */
+  #heroCarousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-control-prev {
+    margin-left: -100px !important;
+    /* Your specified margin */
+    z-index: 10 !important;
+    /* Bring the button to the front */
+    position: relative;
+    /* Ensure proper positioning */
+  }
+
+
+  @media (max-width: 767.98px) {
+    .carousel-control-prev {
+      margin-left: 0px !important;
+    }
+  }
+
+  .carousel-control-next {
+    margin-right: -5px !important;
+    /* From your previous request for the Next button */
+    z-index: 10 !important;
+    /* Ensure Next button is also visible */
+    position: relative;
+  }
+
+  /* Prevent clipping by the carousel container */
+  .carousel {
+    overflow: visible !important;
+  }
+
+  /* If the container or section is also clipping, adjust it */
+  .container,
+  .hero.section {
+    overflow: visible !important;
+  }
+
+  /* Carousel Buttons */
+  .carousel-control-prev-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    left: -15px !important;
+  }
+
+  .carousel-control-next-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    right: -15px !important;
+  }
+
+  /* Custom Arrows */
+  .carousel-control-prev-icon::after,
+  .carousel-control-next-icon::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid var(--accent-color);
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+  }
+
+  .carousel-control-prev-icon::after {
+    transform: rotate(135deg);
+  }
+
+  .carousel-control-next-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  /* Optional: Remove Bootstrap mask */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: none !important;
+  }
+
+  /* Carousel Indicators (Dots) */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.4;
+    border: none;
+    margin: 0 6px;
+    transition: opacity 0.3s ease;
+    color: var(--accent-color);
+  }
+
+  .carousel-indicators .active {
+    opacity: 1;
+  }
+
+  .carousel-item{
+
+  }
+</style> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pragati Flow Tech</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+</head>
+
+<body class="flowjet-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="assets/img/pragati_logo.png" alt="" />
+                <!-- <h1 class="sitename">FlexStart</h1> -->
+            </a>
+<nav id="navmenu" class="navmenu m-auto">
+
+      </nav>
+
+        <script>
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navmenu').innerHTML = data;
+      });
+  </script>
+            <!-- <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Get Started</a> -->
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <div class="page-title sub-page-title">
+        <div class="heading p-5">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-11">
+                        <h1>Crane</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="./index.html">Home</a></li>
+                    <li class="current">Crane</li>
+                </ol>
+            </div>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+
+    <section id="values" class="values section">
+        <!-- Section Title -->
+        <!-- End Section Title -->
+        <!-- <div class="container" data-aos="fade-up">
+            <div class="row content">
+                <div class="col-lg-12 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <h2 style="font-weight: bold;">CRANE </h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <div class="container mt-5 p-0">
+            <div class="col-12 text-center">
+                <h2 class="p-2" style="font-weight: bold; background-color: var(--accent-color); color:white;">
+                    CRANE </h2>
+            </div>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/REFLEX/CENTER LINE® Series RS Butterfly Valves.png"
+                            class="img-fluid" alt="" />
+                        <h3>CENTER LINE® Series RS Butterfly Valves </h3>
+                        <p class="text-start">
+                            CENTER LINE® Series RS Butterfly Valves are resilient seated butterfly valve with superior
+                            design features and materials of construction to provide repeatable tight shutoff in
+                            severe abrasive and corrosive environments for a variety of applications. Replaceable
+                            cartridge seat design with solid backup ring
+                        </p>
+
+                        <p class="text-start">Size: DN 40-1400</p>
+                        <p class="text-start">Class: PN 3.5,10,16</p>
+                        <P class="text-start">Body Types: Wafer, Lugged, Flanged</P>
+                    </div>
+                </div>
+                <!-- End Card Item -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <img src="assets/img/products/REFLEX/SAUNDERS® Industrial Diaphragm Valves.png"
+                            class="img-fluid" alt="" />
+                        <h3>SAUNDERS® Industrial Diaphragm Valves:
+                        </h3>
+                        <p class="text-start">
+                            Saunders® Industrial Diaphragm Valve range encompasses a complete line of manual and linear
+                            actuated diaphragm valves, both weir and straight through styles, playing a vital role in
+                            flow control applications in many diverse industries including Chemical, Mining and Water
+                            Treatment. Saunders diaphragm valves are fully compliant to all global standards.
+                        </p>
+                        <p class="text-start">
+                            Key Diaphragm Valve Features & Benefits:
+
+                            Leak tight* by design ensures full closure even with solids present, 
+
+                            Minimal maintenance as it has only two wetted parts,
+
+                            Better resistance to corrosion/abrasion and longer life considering wide range of linings
+                            and diaphragms to suit most applications
+                        </p>
+                    </div>
+                </div>
+                <!-- End Card Item -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/REFLEX/Saunders® Aseptic Diaphragm Valves.png" class="img-fluid"
+                            alt="" />
+                        <h3>Saunders® Aseptic Diaphragm Valves
+                        </h3>
+                        <p class="text-start">
+                            SAUNDERS®HC4 is a leading global supplier of aseptic diaphragm valve flow solutions to the
+                            Life Science industries. A comprehensive platform of innovative forged and machined block
+                            solutions, unique in-house polymer competence and class leading automation and sensing
+                            technologies enable our customers to handle critical process applications with maximum
+                            security and efficiency.
+                        </p>
+                        <h5 class="text-start">
+                            SAUNDERS®HC4 Aseptic Valves</h5>
+                        <P class="text-start">
+                            Complies to all relevant Global standards & is an essential element of the product for
+                            BioPharma & API Solutions.
+                        </P>
+                        <P class="text-start">
+                            Standard 2-way Body , Custom Valve solutions , Zero Dead leg & point of use, Bio Blog &
+                            Compound solution, Multi Port, Pneumatic Actuators
+                        </P>
+                    </div>
+                </div>
+                <!-- End Card Item -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/REFLEX/FLOWSEAL® High Performance Butterfly Valves.png"
+                            class="img-fluid" alt="" />
+                        <h3>FLOWSEAL® High Performance Butterfly Valves
+                        </h3>
+                        <p class="text-start">
+                            Flowseal® High Performance Butterfly Valves are a standard in many industries including
+                            heating, ventilating and air conditioning, power generation, hydrocarbon processing, water
+                            and waste water treatment and marine and commercial shipbuilding.
+                        </p>
+
+                        <h5 class="">Features And Benefits </h5>
+                        <ul class="list-unstyled text-start">
+                            <li class="mt-1">
+                                <i class="bi bi-check-circle"></i><span class="p-3">High performance shutoff and
+                                    modulating service for standard industrial process lines </span>
+                            </li>
+                            <li class="mt-2">
+                                <i class="bi bi-check-circle"></i><span class="p-3">Bi-directional Pressure-Energized
+                                    Sealing </span>
+                            </li>
+                            <li class="mt-2">
+                                <i class="bi bi-check-circle"></i><span class="p-3">Materials of construction options
+                                    include Carbon and Stainless Steels </span>
+                            </li>
+                            <li class="mt-2">
+                                <i class="bi bi-check-circle"></i><span class="p-3">Sizes up to 48”, both wafer and
+                                    lugged body styles available, classes 150 – 600 </span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- End Card Item -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/REFLEX/Revo – World Class Actuator Technology.png"
+                            class="img-fluid" alt="" />
+                        <h3>Revo – World Class Actuator Technology
+                        </h3>
+                        <p class="text-start">
+                            The Revo brand is the standard for excellence and performance in actuator technology and is
+                            widely recognised in the process industries as a leader in quality and innovation. That
+                            innovation is partnered with a manufacturing excellence to drive advances in product
+                            technology. With our combined knowledge and experience we can offer the optimum actuator for
+                            any application.
+                        </p>
+                    </div>
+                </div>
+                <!-- End Card Item -->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/REFLEX/Saunders® S360 Lite.png" class="img-fluid" alt="" />
+                        <h3>Saunders® S360 Lite
+                        </h3>
+                        <p class="text-start">
+                            The Saunders® S360 Lite range provides standard closure for normally closed applications in
+                            a compact, lightweight package and is available through sizes DN8 – DN100 (0.25” – 4.00”).
+                            The S360 Lite range is a very compact actuator that offers shutoff performance in line with
+                            standard industry applications. The S360 Lite is available in normally closed mode of
+                            operation with optimised spring force up to closure to minimize stress on diaphragms.
+                            Suitable for 10 bar line pressure (Rubber diaphragm) and 8 bar (PTFE diaphragm) at 100%
+                            Delta P
+
+
+                        </p>
+                    </div>
+                </div>
+                <!-- End Card Item -->
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <!-- <div class="footer-newsletter"> -->
+        <div class="container">
+            <!-- <div class="row justify-content-center text-center"> -->
+            <!-- <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>
+              Subscribe to our newsletter and receive the latest news about
+              our products and services!
+            </p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form">
+                <input type="email" name="email" /><input type="submit" value="Subscribe" />
+              </div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">
+                Your subscription request has been sent. Thank you!
+              </div>
+            </form>
+          </div> -->
+        </div>
+        </div>
+        </div>
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <span class="sitename">Pragati Flow Tech Pvt Ltd</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p class="mt-3">
+                            <i class="bi bi-telephone"><span class="ms-2">+919175106075</span></i>
+                        </p>
+                        <p>
+                            <i class="bi bi-envelope"><span class="ms-2">sales@pragati-in.com</span></i>
+                        </p>
+                        <p>
+                            <i class="bi bi-globe"><span class="ms-2">www.pragatiflowtech.in</span></i>
+                        </p>
+                        <p>
+                            <i class="bi bi-geo-alt"> <span class="ms-2">Pragati Flowtech Pvt Ltd
+                                    104, Panchshil The Golden Bell,
+                                    Pingale Wasti, Koregaon Park
+                                    Annexe, Mundhwa, Pune,
+                                    Maharashtra 411036</span></i>
+                        </p>
+
+                        <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="./index.html">Home</a></li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i> <a href="./about.html">About us</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i> <a href="./service-details.html">Services</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Terms of service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Flow Jet Pump Solutions</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Water Treatment Systems</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Industrial Pump Installations</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Crane & Lifting Equipment</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <h4>Follow Us</h4>
+                    <p>Join Our Journey in Flow Technology</p>
+                    <div class="social-links d-flex">
+                        <a href=""><i class="bi bi-twitter-x"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+           <p>
+                © <span>Copyright</span>
+                <strong class="px-1 sitename">Anvation Digital Marketing LLP</strong>
+                <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
+          href=“https://themewagon.com>ThemeWagon -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

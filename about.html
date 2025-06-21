@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>About</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet" />
+
+  <style>
+    /* Uiverse.io card styling adapted for both cards */
+    .card {
+      position: relative;
+      width: 100%;
+      /* Full width of column for responsiveness */
+      max-width: 400px;
+      /* Constrain card width */
+      height: 350px;
+      /* Increased height to accommodate content */
+      border-radius: 100px 0 100px 0;
+      /* Large curved borders on top-left and bottom-right */
+      z-index: 10;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+      /* Neumorphic shadow */
+      border: none;
+      /* Remove Bootstrap border */
+      margin: 0 auto;
+      /* Center cards in columns */
+    }
+
+    .bg {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: calc(100% - 10px);
+      /* Adjust for padding */
+      height: calc(100% - 10px);
+      z-index: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(24px);
+      border-radius: 36px 0 36px 0;
+      /* Slightly smaller radius to fit inside card */
+      overflow: hidden;
+      outline: 2px solid white;
+    }
+
+    /* Style for card content */
+    .card.content {
+      position: relative;
+      z-index: 3;
+      /* Ensure content is above .bg */
+      background: transparent;
+      /* Remove default background */
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card img {
+      height: 60px;
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #333;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* Responsive layout */
+    .row.gx-0 {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      /* Space between cards */
+    }
+
+    @media (max-width: 767.98px) {
+      .card {
+        margin-top: 20px !important;
+        max-width: 100%;
+        /* Full width on mobile */
+      }
+    }
+  </style>
+</head>
+
+<body class="flowjet-page">
+  <!-- Watermark -->
+  <div class="watermark"></div>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/pragati_logo.png" alt="" />
+        <!-- <h1 class="sitename">FlexStart</h1> -->
+      </a>
+      <nav id="navmenu" class="navmenu m-auto">
+
+      </nav>
+      <!-- <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Get Started</a> -->
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <div class="page-title sub-page-title">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-11">
+            <h1>About Us</h1>
+            <p>
+              Pragati Flowtech Private Limited is a distinguished provider of engineered flow solutions with a proven
+              track record spanning over 18 years. PFPL is dedicated to delivering high-quality and innovative water
+              management and flow control solutions across a wide range of industries.
+              We specialize in HVAC applications, Plumbing systems, Water Treatment consistently offering reliable and
+              customized products and services to meet the unique requirements of each client. Our approach combines
+              technical excellence with a deep commitment to sustainability, ensuring that every solution we provide
+              contributes to a cleaner, more efficient future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <nav class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">About Us</li>
+        </ol>
+      </div>
+    </nav> -->
+  </div>
+  <!-- End Page Title -->
+
+  <!-- Main Section -->
+
+  <!-- About Section -->
+  <section id="about" class="about section p-10">
+    <div class="container content" data-aos="fade-up">
+      <div class="row gx-0">
+        <div class="col-md-6 card mt-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg"></div>
+          <div class="card content">
+            <i class=""><img src="assets/img/products/vision.jpeg" style="height: 60px; width: 60px" /></i>
+            <h2>Vision</h2>
+            <p>
+              To be the global benchmark in engineered flow solutions,
+              transforming water management through innovation, reliability and sustainability.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 card mt-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg"></div>
+          <div class="card content">
+            <i class=""><img src="assets/img/products/Mission.jpg.jpeg" style="height: 60px; width: 60px" /></i>
+            <h2>Mission</h2>
+            <p>
+              To consistently deliver a comprehensive range of high-quality engineered flow solutions that support
+              seamless business operations and enhance customer satisfaction across industries
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5" data-aos="fade-up">
+      <div class="row content">
+        <div class="col-lg-8 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+          <div class="">
+            <h2>Our History/Voyage: </h2>
+            <p>Established in 2007, Pragati Flowtech Private Limited has grown into a trusted leader, delivering
+              innovative solutions across industrial,
+              digital infrastructure and water sectors. Our journey is defined by a commitment to operational
+              excellence, sustainability and customer satisfaction. </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+          <img src="assets/img/about_us.png" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- <h1> ABOUT COMAPANY </h1> -->
+
+    <div class="container mt-5 content" data-aos="fade-up">
+      <h2 class="text-center">
+        We represent a portfolio of globally esteemed brands that have
+        established themselves as pioneers in the engineered solutions sector.
+      </h2>
+      <div class="row brands">
+        <div class="col-md-12 mt-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="brand-content">
+            <h3>Xylem</h3>
+            <p class="text-justify">
+              Xylem is internationally recognized for its advanced water management technologies and solutions. With a
+              diverse range of products customized for HVAC systems, plumbing networks, and industrial water treatment
+              applications, Xylem’s offerings are engineered to deliver superior energy efficiency, promote
+              sustainability, and ensure dependable performance even under the most challenging operating conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row brands">
+        <div class="col-md-12 mt-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="brand-content">
+            <h3>Reflex</h3>
+            <p class="text-justify">
+              Reflex is a global leader and recognized authority in pressure management systems, offering an innovative
+              portfolio that includes expansion tanks, pressure vessels, air and dirt separators, pressurization units,
+              and vacuum degassers. Each solution is engineered to optimize system efficiency and enhance the
+              performance of HVAC, water treatment, and industrial applications, ensuring long-term reliability and
+              measurable energy savings.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row brands">
+        <div class="col-md-12 mt-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="brand-content">
+            <h3>CRANEChem Pharma and Energy</h3>
+            <p class="text-justify">
+              CRANE Chem Pharma and Energy specializes in valves and is a global brand with a long-standing heritage in
+              engineered high-performance valve solutions. Their products serve HVAC systems, industrial water
+              treatment, and a wide range of other applications, engineered for exceptional durability, efficiency, and
+              safety. CRANE valves are the preferred choice for organizations seeking reliable control and regulation of
+              fluid systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /About Section -->
+
+  <footer id="footer" class="footer">
+    <!-- <div class="footer-newsletter"> -->
+    <div class="container">
+      <!-- <div class="row justify-content-center text-center"> -->
+      <!-- <div class="col-lg-6">
+               <h4>Join Our Newsletter</h4>
+               <p>
+                 Subscribe to our newsletter and receive the latest news about
+                 our products and services!
+               </p>
+               <form action="forms/newsletter.php" method="post" class="php-email-form">
+                 <div class="newsletter-form">
+                   <input type="email" name="email" /><input type="submit" value="Subscribe" />
+                 </div>
+                 <div class="loading">Loading</div>
+                 <div class="error-message"></div>
+                 <div class="sent-message">
+                   Your subscription request has been sent. Thank you!
+                 </div>
+               </form>
+               </div> -->
+    </div>
+    </div>
+    </div>
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Pragati Flow Tech Pvt Ltd</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p class="mt-3">
+              <i class="bi bi-telephone"><span class="ms-2">+919175106075</span></i>
+            </p>
+            <p>
+              <i class="bi bi-envelope"><span class="ms-2">sales@pragati-in.com</span></i>
+            </p>
+            <p>
+              <i class="bi bi-globe"><span class="ms-2">www.pragatiflowtech.in</span></i>
+            </p>
+            <p>
+              <i class="bi bi-geo-alt"> <span class="ms-2">Pragati Flowtech Pvt Ltd
+                  104, Panchshil The Golden Bell,
+                  Pingale Wasti, Koregaon Park
+                  Annexe, Mundhwa, Pune,
+                  Maharashtra 411036</span></i>
+            </p>
+            <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="./index.html">Home</a></li>
+            <li>
+              <i class="bi bi-chevron-right"></i> <a href="./about.html">About us</a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i> <a href="./Testinominal.html">Testimonial</a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="./blog.html">Blog</a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="./blog.html">Contact </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Join Our Journey in Flow Technology</p>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+       <p>
+                © <span>Copyright</span>
+                <strong class="px-1 sitename">Anvation Digital Marketing LLP</strong>
+                <span>All Rights Reserved</span>
+            </p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
+                  href=“https://themewagon.com>ThemeWagon -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

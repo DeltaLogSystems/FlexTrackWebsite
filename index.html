@@ -1,0 +1,2529 @@
+<!-- <style>
+  /* Carousel Container Styling */
+  #heroCarousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-control-prev {
+    margin-left: -100px !important;
+    /* Your specified margin */
+    z-index: 10 !important;
+    /* Bring the button to the front */
+    position: relative;
+    /* Ensure proper positioning */
+  }
+
+
+  @media (max-width: 767.98px) {
+    .carousel-control-prev {
+      margin-left: 0px !important;
+    }
+  }
+
+  .carousel-control-next {
+    margin-right: -5px !important;
+    /* From your previous request for the Next button */
+    z-index: 10 !important;
+    /* Ensure Next button is also visible */
+    position: relative;
+  }
+
+  /* Prevent clipping by the carousel container */
+  .carousel {
+    overflow: visible !important;
+  }
+
+  /* If the container or section is also clipping, adjust it */
+  .container,
+  .hero.section {
+    overflow: visible !important;
+  }
+
+  /* Carousel Buttons */
+  .carousel-control-prev-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    left: -15px !important;
+  }
+
+  .carousel-control-next-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    right: -15px !important;
+  }
+
+  /* Custom Arrows */
+  .carousel-control-prev-icon::after,
+  .carousel-control-next-icon::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid var(--accent-color);
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+  }
+
+  .carousel-control-prev-icon::after {
+    transform: rotate(135deg);
+  }
+
+  .carousel-control-next-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  /* Optional: Remove Bootstrap mask */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: none !important;
+  }
+
+  /* Carousel Indicators (Dots) */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.4;
+    border: none;
+    margin: 0 6px;
+    transition: opacity 0.3s ease;
+    color: var(--accent-color);
+  }
+
+  .carousel-indicators .active {
+    opacity: 1;
+  }
+
+  .carousel-item{
+
+  }
+</style> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Pragati Flow Tech</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet" />
+
+  <!-- =======================================================
+  * Template Name: FlexStart
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Updated: Nov 01 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+    /* Hero section background */
+    #hero {
+      background-color: var(--background-color);
+      /* White */
+      position: relative;
+      padding-bottom: 4rem;
+      /* Add space for pagination dots */
+    }
+
+    /* Carousel Wrapper */
+    #heroCarousel {
+      position: relative;
+    }
+
+    /* Carousel Inner */
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      bottom: -50px;
+      /* Or adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      width: auto;
+    }
+
+    .carousel-indicators button {
+      all: unset;
+      width: 14px;
+      height: 14px;
+      /* border-radius: 50%; */
+      background-color: #888;
+      /* Inactive color */
+      opacity: 0.6;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      border: 1px solid var(--accent-color);
+    }
+
+    .carousel-indicators .active {
+      background-color: var(--accent-color);
+      /* Active color */
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+
+    /* Navigation Buttons Positioned Outside */
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border: 1px solid;
+      border-color: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      opacity: 0.9;
+    }
+
+    .carousel-control-prev {
+      left: -60px;
+      /* Push outside the content */
+    }
+
+    .carousel-control-next {
+      right: -60px;
+      /* Push outside the content */
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1);
+      /* Makes arrow white */
+      width: 1rem;
+      height: 1rem;
+      background-size: 100% 100%;
+    }
+
+    /* Responsive Position Adjustments */
+    @media (max-width: 768px) {
+      .carousel-control-prev {
+        left: -30px;
+      }
+
+      .carousel-control-next {
+        right: -30px;
+      }
+
+      .carousel-indicators {
+        bottom: -40px;
+      }
+    }
+  </style>
+
+  <style>
+    /* Reset and Base Styles */
+
+
+    /* Section Styling */
+    .clients.section {
+      padding: 80px 0;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      margin: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Carousel Styling */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      padding: 30px 0;
+      box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    .client-item {
+      flex: 0 0 auto;
+      width: 180px;
+      height: 120px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .client-item:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .client-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: all 0.3s ease;
+    }
+
+    .client-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-100% - 30px));
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Gradient Overlays for Edges */
+    .carousel-container::before,
+    .carousel-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .carousel-container::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    .carousel-container::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    /* Floating Background Shapes */
+    .floating-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .floating-shapes::before,
+    .floating-shapes::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      animation: float 20s infinite;
+    }
+
+    .floating-shapes::before {
+      top: 10%;
+      left: 10%;
+      animation-delay: -10s;
+    }
+
+    .floating-shapes::after {
+      bottom: 10%;
+      right: 10%;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-50px) rotate(180deg);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .client-item {
+        width: 140px;
+        height: 100px;
+        padding: 15px;
+      }
+
+      .carousel-track {
+        gap: 20px;
+      }
+
+      .clients.section {
+        padding: 60px 0;
+        margin: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title h2 {
+        font-size: 1.5rem;
+      }
+
+      .client-item {
+        width: 120px;
+        height: 80px;
+        padding: 10px;
+      }
+
+      .carousel-track {
+        gap: 15px;
+      }
+    }
+  </style>
+
+  <style>
+    /* Reset and Base Styles */
+
+    /* Section Styling */
+    .products.section {
+      padding: 80px 0;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      margin: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+
+
+    /* Carousel Styling */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      padding: 30px 0;
+      box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 20s linear infinite;
+      gap: 30px;
+      align-items: center;
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    .product-item {
+      flex: 0 0 auto;
+      width: 320px;
+      /* Slightly increased for better spacing */
+      height: 280px;
+      /* Increased to accommodate larger images and names */
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+    }
+
+    .product-item::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+      z-index: -1;
+      border-radius: 14px;
+    }
+
+    .product-item:hover {
+      transform: translateY(-8px) scale(1.05) rotate(2deg);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .product-img {
+      width: 280px;
+      height: 180px;
+      object-fit: contain;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .product-item:hover .product-img {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    }
+
+    .product-name {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+      margin-top: 15px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      transition: color 0.3s ease;
+    }
+
+    .product-item:hover .product-name {
+      color: #1e90ff;
+      /* Vibrant blue on hover */
+    }
+
+    /* Navigation Buttons */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(45deg, rgba(47, 18, 215, 0.2), rgba(0, 242, 255, 0.4));
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 3;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-btn:hover {
+      background: linear-gradient(45deg, rgba(0, 242, 255, 0.4), rgba(47, 18, 215, 0.2));
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+
+    /* Animations */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-100% + 320px + 30px));
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Gradient Overlays for Edges */
+    .carousel-container::before,
+    .carousel-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .carousel-container::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    .carousel-container::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    /* Floating Background Shapes */
+    .floating-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .floating-shapes::before,
+    .floating-shapes::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      animation: float 20s infinite;
+    }
+
+    .floating-shapes::before {
+      top: 10%;
+      left: 10%;
+      animation-delay: -10s;
+    }
+
+    .floating-shapes::after {
+      bottom: 10%;
+      right: 10%;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-50px) rotate(180deg);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .product-item {
+        width: 240px;
+        height: 220px;
+        padding: 15px;
+      }
+
+      .product-img {
+        width: 200px;
+        height: 140px;
+      }
+
+      .product-name {
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+
+      .carousel-track {
+        gap: 20px;
+      }
+
+      .products.section {
+        padding: 60px 0;
+        margin: 10px;
+      }
+
+      .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-100% + 240px + 20px));
+        }
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title h2 {
+        font-size: 1.5rem;
+      }
+
+      .product-item {
+        width: 200px;
+        height: 180px;
+        padding: 10px;
+      }
+
+      .product-img {
+        width: 160px;
+        height: 110px;
+      }
+
+      .product-name {
+        font-size: 0.8rem;
+        margin-top: 8px;
+      }
+
+      .carousel-track {
+        gap: 15px;
+      }
+
+      .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-100% + 200px + 15px));
+        }
+      }
+    }
+  </style>
+
+  <style>
+    /* Modal Styling */
+    .modal-content {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #ffffff 50%, #e6f0fa 50%);
+    }
+
+    .modal-body {
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .modal-text {
+      flex: 1 1 50%;
+      padding: 40px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .modal-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .modal-text p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .water-modal-image {
+      flex: 1 1 50%;
+      background: url('./assets/img/water-solutions.jpg') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .industry-modal-image {
+      flex: 1 1 50%;
+      background: url('./assets/img/industry-solutions.jpg') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .digital-modal-image {
+      flex: 1 1 50%;
+      background: url('./assets/img/digital-solutions.jpg') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .modal-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 102, 204, 0.2);
+    }
+
+    .modal-close-btn {
+      color: #fff;
+      background: #ff6200;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: #e55a00;
+    }
+
+    @media (max-width: 768px) {
+
+      .modal-text,
+      .modal-image {
+        flex: 1 1 100%;
+        min-height: 300px;
+      }
+
+      .modal-text {
+        padding: 20px;
+      }
+
+      .modal-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .modal-text p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <style>
+    /* Watermark (Text or Image) */
+    .watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100vh;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.19;
+
+      /* Text Watermark */
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5rem;
+      color: black;
+      transform: rotate(-30deg);
+      white-space: nowrap;
+      user-select: none; */
+
+      /* Image Watermark (uncomment below and comment text watermark if needed) */
+
+      background-image: url('./assets/img/pragati_logo.png');
+      background-repeat: no-repeat;
+      background-size: 500px auto;
+      background-position: center;
+      content: "";
+
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <!-- Watermark -->
+  <!-- <div class="watermark"></div> -->
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/pragati_logo.png" alt="" />
+        <!-- <h1 class="sitename">FlexStart</h1> -->
+      </a>
+      <nav id="navmenu" class="navmenu m-auto">
+
+      </nav>
+
+      <script>
+        fetch('/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navmenu').innerHTML = data;
+          });
+      </script>
+      <!-- <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Get Started</a> -->
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container">
+        <!-- Carousel Wrapper -->
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Dots / Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+              aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row gy-4">
+                <img src="./assets/img/Home/13.png" class="product-img h-100 w-100" alt="I-Duron">
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row gy-4">
+                <img src="./assets/img/Home/14.png" class="product-img h-100 w-100" alt="I-Duron">
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="row gy-4">
+                <img src="./assets/img/Home/15.png" class="product-img h-100 w-100" alt="I-Duron">
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Color Navigation Buttons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Business Segments</h2>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container mt-3">
+        <div class="row gy-4">
+          <!-- Water Card -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative" style="height: 450px; position: relative;">
+              <i class="bi bi-droplet icon"></i>
+              <h3>Water</h3>
+              <p class="text-start">
+                We are committed to advance sustainable and innovative solutions in the water sector,
+                drawing on extensive expertise and global best practices. Our portfolio encompasses high-performance
+                systems for HVAC applications, Plumbing solutions and Water Treatment processes.
+              </p>
+              <div class="w-100" style="display: flex; justify-content: center; align-items: center;">
+                <a href="#" class="read-more stretched-link" data-bs-toggle="modal" data-bs-target="#waterModal"
+                  style="position: absolute; bottom: 20px;">
+                  <span>Read More</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Industrial Card -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative" style="height: 450px; position: relative;">
+              <i class="bi bi-water icon"></i>
+              <h3>Industrial</h3>
+              <p class="text-start">
+                We have established ourselves as a trusted partner, delivering comprehensive engineered flow solutions
+                designed to support the demands of modern manufacturing and process industries.
+              </p>
+              <div class="w-100" style="display: flex; justify-content: center; align-items: center;">
+                <a href="#" class="read-more stretched-link" data-bs-toggle="modal" data-bs-target="#industryModal"
+                  style="position: absolute; bottom: 20px;">
+                  <span>Read More</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Digital Infrastructure Card -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item item-red position-relative" style="height: 450px; position: relative;">
+              <i class="bi bi-box-seam icon"></i>
+              <h3>Digital Infrastructure</h3>
+              <p class="text-start">
+                We recognize the critical role that digital infrastructure plays in today’s rapidly evolving landscape.
+              </p>
+              <div class="w-100" style="display: flex; justify-content: center; align-items: center;">
+                <a href="#" class="read-more stretched-link" data-bs-toggle="modal"
+                  data-bs-target="#digitalInfrastructureModal" style="position: absolute; bottom: 20px;">
+                  <span>Read More</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <!-- Water Modal -->
+      <div class="modal fade" id="waterModal" tabindex="-1" aria-labelledby="waterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="modal-text">
+                <h2>Water Solutions</h2>
+                <p>
+                  Our offerings are designed to optimize energy consumption, improve system reliability and ensure water
+                  quality across a diverse range of applications. From commercial developments to municipal water
+                  systems, we understand the critical role that effective water management plays in the smooth
+                  functioning of modern infrastructure. As environmental concerns continue to grow, we are committed to
+                  incorporating environment friendly practices and technologies into every solution we provide.
+                </p>
+                <p>
+                  By integrating the latest advancements in fluid management and control, we enable our clients to
+                  achieve measurable improvements in efficiency and performance. Our team of experienced professionals
+                  provides end-to-end support, from design and supply to installation, commissioning and routine
+                  maintenance. At PFPL, we see water not just as a resource but as a shared responsibility and we take
+                  pride in delivering solutions that are as sustainable as they are reliable.
+                </p>
+                <button type="button" class="modal-close-btn" data-bs-dismiss="modal">Close</button>
+              </div>
+              <div class="water-modal-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Water Modal -->
+
+      <!-- Industrial Modal -->
+      <div class="modal fade" id="industryModal" tabindex="-1" aria-labelledby="industryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="modal-text">
+                <h2>Industrial Solutions</h2>
+                <p>
+                  Our approach begins with a thorough understanding of our clients’ operations, allowing us to recommend
+                  solutions that enhance efficiency, reduce operational costs and extend the lifespan of critical
+                  systems. We supply high-quality products from globally recognized brands, ensuring that every
+                  component of our solutions meets the highest standards of durability, safety and performance.
+                </p>
+                <p>
+                  Beyond product supply, we provide a full suite of engineered services including installation,
+                  commissioning and ongoing maintenance, to ensure seamless integration and optimal functionality. Our
+                  expertise spans various industrial sectors, from manufacturing plants and power generation facilities
+                  to chemical processing and heavy industries. At PFPL, we are committed to delivering solutions that
+                  empower industries to achieve new heights of productivity and sustainability.
+                </p>
+                <button type="button" class="modal-close-btn" data-bs-dismiss="modal">Close</button>
+              </div>
+              <div class="industry-modal-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Industrial Modal -->
+
+      <!-- Digital Infrastructure Modal -->
+      <div class="modal fade" id="digitalInfrastructureModal" tabindex="-1"
+        aria-labelledby="digitalInfrastructureModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="modal-text">
+                <h2>Digital Infrastructure Solutions</h2>
+                <p>
+                  We work closely with project stakeholders to develop solutions that address the specific challenges of
+                  digital infrastructure, such as precise thermal management, water conservation and advanced system
+                  monitoring. Our high-performance HVAC and fluid control systems are engineered to maintain optimal
+                  environmental conditions, ensuring the reliable operation of sensitive equipment and reducing energy
+                  consumption.
+                </p>
+                <p>
+                  By incorporating the latest technologies and adhering to stringent quality standards, we enable our
+                  clients to build resilient digital ecosystems that support the seamless flow of data and services. Our
+                  dedication extends beyond implementation, with comprehensive maintenance and support services that
+                  safeguard the integrity of digital operations well into the future. We are proud to be a trusted
+                  partner in shaping the digital backbone of modern society.
+                </p>
+                <button type="button" class="modal-close-btn" data-bs-dismiss="modal">Close</button>
+              </div>
+              <div class="digital-modal-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Digital Infrastructure Modal -->
+
+      <!-- Commented-out cards (Unchanged) -->
+      <!-- <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="service-item item-cyan position-relative">
+      <i class="bi bi-funnel-fill icon"></i>
+      <h3>Building</h3>
+      <p> We specialize in designing modern sanitary and drainage solutions.
+         We are also the top manufacturer of plumbing pipes for hot and cold water application in residential, commercial projects.             </p>
+      <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div> -->
+      <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+    <div class="service-item item-indigo position-relative">
+      <i class="bi bi-gear-fill icon"></i>
+      <h3>Industrial Automation</h3>
+      <p>
+        Custom automation solutions to boost efficiency and optimize
+        production processes.
+      </p>
+      <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div> -->
+      <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+    <div class="service-item item-pink position-relative">
+      <i class="bi bi-tools icon"></i>
+      <h3>Maintenance & Support</h3>
+      <p>
+        Reliable maintenance and technical support ensuring continuous
+        and smooth operations.
+      </p>
+      <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div> -->
+    </section>
+
+
+    <!--Products Section-->
+    <section id="products" class="products section">
+      <div class="floating-shapes"></div>
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Our Products</h2>
+        <p>Explore our premium product range</p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container mt-3">
+        <div class="carousel-container">
+          <!-- Navigation Buttons -->
+          <button class="carousel-btn prev-btn" aria-label="Previous Product">❮</button>
+          <button class="carousel-btn next-btn" aria-label="Next Product">❯</button>
+
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Product Items -->
+            <div class="product-item">
+              <a href="./BellandGossett.html">
+                <img
+                  src="./assets/img/products/PRODUCT_WITH_logo/Bell & Gossett – e80SC – Split Coupled Vertical Inline Pump.png"
+                  class="product-img" alt="I-Duron">
+              </a>
+              <span class="product-name">Bell & Gossett</span>
+            </div>
+            <div class="product-item">
+              <a href="./LowaraProducts.html">
+                <img
+                  src="./assets/img/products/PRODUCT_WITH_logo/Lowara – eNSC- End Suction Back Pullout Design Pump.png"
+                  class="product-img" alt="Lowara"></a>
+              <span class="product-name">Lowara</span>
+            </div>
+            <div class="product-item">
+              <a href="./ACFire.html">
+                <img src="./assets/img/products/PRODUCT_WITH_logo/8100 Series Horizontal Split Case Fire Pump.png"
+                  class="product-img" alt="lowara-emp"></a>
+              <span class="product-name">AC Fire</span>
+            </div>
+            <div class="product-item">
+              <a href="./Steady.html">
+                <img src="./assets/img/products/PRODUCT_WITH_logo/Steady.png" class="product-img"
+                  alt="LF Plus Series"></a>
+              <span class="product-name">Steady</span>
+            </div>
+            <div class="product-item">
+              <a href="./FlygtMixer.html">
+                <img src="./assets/img/products/PRODUCT_WITH_logo/Geared Single Speed Mixer 4410.png"
+                  class="product-img" alt="oscar-main"></a>
+              <span class="product-name">Flygt mixer</span>
+            </div>
+            <div class="product-item">
+              <a href="./OzoneSystems.html">
+                <img src="./assets/img/products/PRODUCT_WITH_logo/Wedeco Z-Compact ozone system.png" class="product-img"
+                  alt="Duplex II Series"></a>
+              <span class="product-name">Ozone Systems</span>
+            </div>
+            <div class="product-item">
+              <a href="./WedecoUV.html">
+                <img src="./assets/img/products/PRODUCT_WITH_logo/K143 Series UV disinfection system.png"
+                  class="product-img" alt="Pneumatic Actuator"></a>
+              <span class="product-name">Wedeco UV</span>
+            </div>
+            <div class="product-item">
+              <a href="./DiaphragmandBladder.html">
+                <img src="./assets/img/products/REFLEX/ReflexN.png" class="product-img" alt="ocs-ozone system">
+              </a>
+              <span class="product-name">Diaphragm and Bladder Expansion Vessels</span>
+            </div>
+            <div class="product-item">
+              <a href="./Forpotablewaterapplications.html">
+                <img src="./assets/img/products/REFLEX/Refix DE.png" class="product-img" alt="GLC Inline">
+              </a>
+              <span class="product-name">For potable water applications</span>
+            </div>
+            <div class="product-item">
+              <a href="./PressurisationSystems.html">
+                <img src="./assets/img/products/REFLEX/Reflexomat Compressor Controlled Systems.png" class="product-img"
+                  alt="Cordonel static">
+              </a>
+              <span class="product-name">Pressurisation Systems</span>
+            </div>
+            <div class="product-item">
+              <a href="./DeaerationSystemsandSeparationTechnology.html">
+                <img src="./assets/img/products/REFLEX/Servimat.png" class="product-img" alt="Cordonel static">
+              </a><span class="product-name">Deaeration Systems & Separation Technology</span>
+            </div>
+
+            <div class="product-item">
+              <a href="./HotWaterStorageTanksandHeatExchangers.html">
+                <img src="./assets/img/products/REFLEX/Storatherm Heat Buffer Tank.png" class="product-img"
+                  alt="Cordonel static">
+              </a>
+              <span class="product-name">Hot Water Storage Tanks & Heat Exchangers</span>
+            </div>
+
+            <div class="product-item">
+              <a href="./Crane.html">
+                <img src="./assets/img/products/REFLEX/SAUNDERS® Industrial Diaphragm Valves.png" class="product-img"
+                  alt="Cordonel static">
+              </a>
+              <span class="product-name">CRANE</span>
+            </div>
+
+            <div class="product-item">
+              <a href="./PressurisationSystems.html">
+                <img src="./assets/img/products/REFLEX/Reflexomat Compressor Controlled Systems.png" class="product-img"
+                  alt="Cordonel static">
+              </a><span class="product-name">Pressurisation Systems</span>
+            </div>
+
+            <!-- Cloned items will be added here via JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const track = document.querySelector('#carouselTrack');
+          const items = document.querySelectorAll('.product-item');
+          const prevBtn = document.querySelector('.prev-btn');
+          const nextBtn = document.querySelector('.next-btn');
+
+          // Clone the first few items to ensure seamless looping
+          const itemsToClone = 3;
+          for (let i = 0; i < itemsToClone; i++) {
+            const clone = items[i].cloneNode(true);
+            track.appendChild(clone);
+          }
+
+          // Recalculate items after cloning
+          const allItems = document.querySelectorAll('.product-item');
+          let itemWidth = 320 + 30; // Default: Product item width (320px) + gap (30px)
+          let currentPosition = 0;
+          let autoSlideTimeout;
+
+          // Adjust itemWidth based on screen size (matches CSS breakpoints)
+          const updateItemWidth = () => {
+            if (window.innerWidth <= 480) {
+              itemWidth = 200 + 15; // Width + gap for mobile
+            } else if (window.innerWidth <= 768) {
+              itemWidth = 240 + 20; // Width + gap for tablet
+            } else {
+              itemWidth = 320 + 30; // Default for desktop
+            }
+          };
+          updateItemWidth();
+          window.addEventListener('resize', updateItemWidth);
+
+          // Function to update the carousel position with infinite looping
+          const updatePosition = () => {
+            const totalWidth = items.length * itemWidth; // Width of original items
+            if (currentPosition <= -totalWidth) {
+              currentPosition += totalWidth;
+              track.style.transition = 'none';
+              track.style.transform = `translateX(${currentPosition}px)`;
+              track.offsetHeight;
+              track.style.transition = 'transform 0.5s ease';
+            }
+            if (currentPosition > 0) {
+              currentPosition -= totalWidth;
+              track.style.transition = 'none';
+              track.style.transform = `translateX(${currentPosition}px)`;
+              track.offsetHeight;
+              track.style.transition = 'transform 0.5s ease';
+            }
+            track.style.transform = `translateX(${currentPosition}px)`;
+          };
+
+          // Function to reset the automatic sliding
+          const resetAutoSlide = () => {
+            clearTimeout(autoSlideTimeout);
+            track.style.animation = 'none';
+            autoSlideTimeout = setTimeout(() => {
+              track.style.animation = 'scroll 20s linear infinite';
+            }, 5000);
+          };
+
+          // Next button: Slide left
+          nextBtn.addEventListener('click', () => {
+            currentPosition -= itemWidth;
+            updatePosition();
+            resetAutoSlide();
+          });
+
+          // Previous button: Slide right
+          prevBtn.addEventListener('click', () => {
+            currentPosition += itemWidth;
+            updatePosition();
+            resetAutoSlide();
+          });
+        });
+      </script>
+
+    </section>
+    <!--Product Section-->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <!-- <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+      </div> -->
+      <div class="container mt-4" data-aos="fade-up">
+        <div class="row gx-0 content">
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="p-3">
+              <h3> What we do </h3>
+              <h2>Empowering Industries with Intelligent Flow Solutions.</h2>
+              <p style="text-justify: auto;">
+                Pragati Flowtech Private Limited is a distinguished provider of engineered flow solutions with a proven
+                track record spanning over 18 years.
+                PFPL is dedicated to delivering high-quality and innovative water management and flow control solutions
+                across a wide range of industries. We specialize in HVAC applications, Plumbing systems, Water Treatment
+                consistently offering reliable and customized products and services to meet the unique requirements of
+                each client. Our approach combines technical excellence with a deep commitment to sustainability,
+                ensuring that every solution we provide contributes to a cleaner, more efficient future.
+              </p>
+              <!-- <div class="text-center text-lg-start">
+                <a href="#"
+                  class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/about_us.png" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /About Section -->
+
+
+
+    <!-- Values Section -->
+    <section id="values" class="values section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Values</h2>
+        <p>What we value most<br /></p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container mt-3">
+        <div class="row gy-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <img src="assets/img/values_1.png" class="img-fluid" alt="" />
+              <h3>Innovation</h3>
+              <p>
+                We embrace innovation as the driving force behind our continued success. By fostering a culture of
+                creativity and continuous improvement,
+                we constantly explore and integrate cutting-edge technologies and processes.
+              </p>
+            </div>
+          </div>
+          <!-- End Card Item -->
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <img src="assets/img/values_2.png" class="img-fluid" alt="" />
+              <h3>Integrity</h3>
+              <p>
+                We uphold the highest standards of integrity, conducting our operations with honesty and transparency.
+                Maintain trust in every interaction we build strong, reliable relationships with our clients, partners
+                and stakeholders.
+            </div>
+          </div>
+          <!-- End Card Item -->
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <img src="assets/img/values_3.png" class="img-fluid" alt="" />
+              <h3>Commitment</h3>
+              <p>
+                We are dedicated to achieving excellence in every aspect of our work. Our commitment to delivering
+                reliable,
+                high-quality solutions ensures that we consistently exceed expectations and build long-term partnerships
+                based on trust and shared success.
+              </p>
+            </div>
+          </div>
+          <!-- End Card Item -->
+        </div>
+      </div>
+    </section>
+    <!-- /Values Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+      <div class="floating-shapes"></div>
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Global Footprint</h2>
+        <p>We work with the best clients</p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container mt-3">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <!-- Client Items -->
+            <div class="client-item"><img src="assets/img/icon/mercedes-benx.jpeg" alt="Mercedes-Benz"></div>
+            <div class="client-item"><img src="assets/img/icon/jfe.jpeg" alt="JFE"></div>
+            <div class="client-item"><img src="assets/img/icon/aquatechintl.webp" alt="Aquatech International">
+            </div>
+            <div class="client-item"><img src="assets/img/icon/bluestar.jpeg" alt="Blue Star"></div>
+            <div class="client-item"><img src="assets/img/icon/epiroc.png" alt="Epiroc"></div>
+            <div class="client-item"><img src="assets/img/icon/hyt.jpeg" alt="HYT"></div>
+            <div class="client-item"><img src="assets/img/icon/graware.jpeg" alt="Graware"></div>
+            <div class="client-item"><img src="assets/img/icon/oil.jpeg" alt="Oil Corporation"></div>
+            <div class="client-item"><img src="assets/img/icon/panchshil.jpeg" alt="Panchshil"></div>
+            <div class="client-item"><img src="assets/img/icon/parle.jpeg" alt="Parle"></div>
+            <div class="client-item"><img src="assets/img/icon/rakho.jpeg" alt="Rakho"></div>
+            <div class="client-item"><img src="assets/img/icon/skoda.jpeg" alt="Skoda"></div>
+            <div class="client-item"><img src="assets/img/icon/voltas.jpeg" alt="Voltas"></div>
+            <div class="client-item"><img src="assets/img/icon/w group.jpeg" alt="W Group"></div>
+            <div class="client-item"><img src="assets/img/icon/wipro.jpeg" alt="Wipro"></div>
+            <div class="client-item"><img src="assets/img/icon/info.jpeg" alt="Infosys"></div>
+            <div class="client-item"><img src="assets/img/icon/novotel.jpeg" alt="Novotel"></div>
+            <div class="client-item"><img src="assets/img/icon/schwing setter.jpeg" alt="Schwing Stetter"></div>
+            <div class="client-item"><img src="assets/img/icon/metro.jpeg" alt="Metro"></div>
+            <div class="client-item"><img src="assets/img/icon/thermax.jpeg" alt="Thermax"></div>
+            <div class="client-item"><img src="assets/img/icon/shaporji.jpeg" alt="Shapoorji Pallonji"></div>
+            <div class="client-item"><img src="assets/img/icon/ihi group.png" alt="IHI Group"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Clients Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0" style="color: #ee6c20"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0" style="color: #15be56"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0" style="color: #bb0852"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                  class="purecounter"></span>
+                <p>Hard Workers</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Stats Item -->
+        </div>
+      </div>
+    </section>
+    <!-- /Stats Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Features</h2>
+        <p>Our Advanced Features<br /></p>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-5">
+          <!-- <div class="col-xl-6" data-aos="zoom-out" data-aos-delay="100">
+          </div> -->
+
+          <!-- <div class="col-xl-6 d-flex">
+            <div class="row align-self-center gy-4">
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Stock Water Solution </h3>
+                </div>
+              </div> -->
+          <!-- End Feature Item -->
+
+          <!-- <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Eco-Friendly Operations</h3>
+                </div>
+              </div> -->
+          <!-- End Feature Item -->
+
+          <!-- <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>20+ years of expertise</h3>
+                </div>
+              </div> -->
+          <!-- End Feature Item -->
+
+          <!-- <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3> 100+ Products</h3>
+                </div>
+              </div> -->
+          <!-- End Feature Item -->
+
+          <!-- <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>Dedicated Team</h3>
+                </div>
+              </div> -->
+          <!-- End Feature Item -->
+
+          <!-- <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>24/7 After-Sale Support</h3>
+                </div>
+              </div> -->
+          <!-- End Feature Item -->
+          <!-- </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+          <!-- /Features Section -->
+
+          <!-- Alt Features Section -->
+          <section id="alt-features" class="alt-features section">
+            <div class="container">
+              <div class="row gy-5">
+                <div class="col-xl-7 d-flex order-2 order-xl-1" data-aos="fade-up" data-aos-delay="200">
+                  <div class="row align-self-center gy-5">
+                    <div class="col-md-6 icon-box">
+                      <i class="bi bi-droplet"></i>
+                      <div>
+                        <h4 style="margin-top: 12px;">Stock Water Solution </h4>
+                        <!-- <p>
+                    Optimized pumps and systems that reduce power consumption
+                    and lower operational costs.
+                  </p> -->
+                      </div>
+                    </div>
+                    <!-- End Feature Item -->
+
+                    <div class="col-md-6 icon-box">
+                      <i class="bi bi-tree"></i>
+                      <div>
+                        <h4 style="margin-top: 12px;">Eco-Friendly Operations</h4>
+                        <!-- <p>
+                    Durable materials and engineering to withstand harsh
+                    industrial environments.
+                  </p> -->
+                      </div>
+                    </div>
+                    <!-- End Feature Item -->
+
+                    <div class="col-md-6 icon-box">
+                      <i class="bi bi-check"></i>
+                      <div>
+                        <h4 style="margin-top: 10px;">20+ years of expertise</h4>
+                        <!-- <p>
+                    Integrated sensors and controls for real-time system
+                    performance tracking.
+                  </p> -->
+                      </div>
+                    </div>
+                    <!-- End Feature Item -->
+
+                    <div class="col-md-6 icon-box">
+                      <i class="bi bi-gear-fill"></i>
+                      <div>
+                        <h4 style="margin-top: 10px;">100+ Products</h4>
+                        <!-- <p>
+                    Pre-engineered solutions designed for quick and
+                    hassle-free deployment.
+                  </p> -->
+                      </div>
+                    </div>
+                    <!-- End Feature Item -->
+
+                    <div class="col-md-6 icon-box">
+                      <i class="bi bi-people"></i>
+                      <div>
+                        <h4 style="margin-top: 12px;">Dedicated Team</h4>
+                        <!-- <p>
+                    Flexible systems that grow with your business and evolving
+                    process requirements.
+                  </p> -->
+                      </div>
+                    </div>
+                    <!-- End Feature Item -->
+
+                    <div class="col-md-6 icon-box">
+                      <i class="bi bi-tools"></i>
+                      <div>
+                        <h4 style="margin-top: 12px;">24/7 After-Sale Support</h4>
+                        <!-- <p>
+                    Environmentally responsible technologies promoting water
+                    and energy conservation.
+                  </p> -->
+                      </div>
+                    </div>
+                    <!-- End Feature Item -->
+                  </div>
+                </div>
+
+                <div class="col-xl-5 d-flex align-items-center order-1 order-xl-2" data-aos="fade-up"
+                  data-aos-delay="100">
+                  <img src="./assets/img/values_1.png" class="img-fluid" alt="Features Image Will Show Here" />
+
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /Alt Features Section -->
+
+
+          <!-- /Services Section -->
+
+          <!-- Pricing Section -->
+          <section id="pricing" class="pricing section" style="display: none">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h2>Pricing</h2>
+              <p>Check Our Affordable Pricing<br /></p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="pricing-tem">
+                    <h3 style="color: #20c997">Free Plan</h3>
+                    <div class="price"><sup>$</sup>0<span> / mo</span></div>
+                    <div class="icon">
+                      <i class="bi bi-box" style="color: #20c997"></i>
+                    </div>
+                    <ul>
+                      <li>Aida dere</li>
+                      <li>Nec feugiat nisl</li>
+                      <li>Nulla at volutpat dola</li>
+                      <li class="na">Pharetra massa</li>
+                      <li class="na">Massa ultricies mi</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+                <!-- End Pricing Item -->
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="pricing-tem">
+                    <span class="featured">Featured</span>
+                    <h3 style="color: #0dcaf0">Starter Plan</h3>
+                    <div class="price"><sup>$</sup>19<span> / mo</span></div>
+                    <div class="icon">
+                      <i class="bi bi-send" style="color: #0dcaf0"></i>
+                    </div>
+                    <ul>
+                      <li>Aida dere</li>
+                      <li>Nec feugiat nisl</li>
+                      <li>Nulla at volutpat dola</li>
+                      <li>Pharetra massa</li>
+                      <li class="na">Massa ultricies mi</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+                <!-- End Pricing Item -->
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="pricing-tem">
+                    <h3 style="color: #fd7e14">Business Plan</h3>
+                    <div class="price"><sup>$</sup>29<span> / mo</span></div>
+                    <div class="icon">
+                      <i class="bi bi-airplane" style="color: #fd7e14"></i>
+                    </div>
+                    <ul>
+                      <li>Aida dere</li>
+                      <li>Nec feugiat nisl</li>
+                      <li>Nulla at volutpat dola</li>
+                      <li>Pharetra massa</li>
+                      <li>Massa ultricies mi</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+                <!-- End Pricing Item -->
+
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="pricing-tem">
+                    <h3 style="color: #0d6efd">Ultimate Plan</h3>
+                    <div class="price"><sup>$</sup>49<span> / mo</span></div>
+                    <div class="icon">
+                      <i class="bi bi-rocket" style="color: #0d6efd"></i>
+                    </div>
+                    <ul>
+                      <li>Aida dere</li>
+                      <li>Nec feugiat nisl</li>
+                      <li>Nulla at volutpat dola</li>
+                      <li>Pharetra massa</li>
+                      <li>Massa ultricies mi</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+                <!-- End Pricing Item -->
+              </div>
+              <!-- End pricing row -->
+            </div>
+          </section>
+          <!-- /Pricing Section -->
+
+          <!-- Faq Section -->
+          <section id="faq" class="" style="display: none;">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h2>F.A.Q</h2>
+              <p>Frequently Asked Questions</p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                  <div class="faq-container">
+                    <div class="faq-item faq-active">
+                      <h3>What types of pumps does Pragati Flow Tech offer?</h3>
+                      <div class="faq-content">
+                        <p>
+                          We specialize in Flow Jet Pumps, AC Fire Pumps, and other
+                          high-quality pumps suited for industrial and commercial
+                          applications.
+                        </p>
+                      </div>
+                      <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+                    <!-- End Faq item-->
+
+                    <div class="faq-item">
+                      <h3>Do you provide water treatment solutions?</h3>
+                      <div class="faq-content">
+                        <p>
+                          Yes, we offer advanced water treatment systems including
+                          I-Duron, Sanitaire, Wedeco Ozone Systems, and UV treatment
+                          products.
+                        </p>
+                      </div>
+                      <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+                    <!-- End Faq item-->
+
+                    <div class="faq-item">
+                      <h3>Can you handle industrial automation projects?</h3>
+                      <div class="faq-content">
+                        <p>
+                          Absolutely! We design custom automation solutions to
+                          enhance operational efficiency and reduce downtime for
+                          your facilities.
+                        </p>
+                      </div>
+                      <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+                    <!-- End Faq item-->
+                  </div>
+                </div>
+                <!-- End Faq Column-->
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                  <div class="faq-container">
+                    <div class="faq-item">
+                      <h3>What brands do you distribute for water solutions?</h3>
+                      <div class="faq-content">
+                        <p>
+                          We distribute trusted brands like Lowara, Bell & Gossett,
+                          Sensus, Steady, and Heat Exchangers for reliable water
+                          management.
+                        </p>
+                      </div>
+                      <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+                    <!-- End Faq item-->
+
+                    <div class="faq-item">
+                      <h3>Do you offer maintenance and after-sales support?</h3>
+                      <div class="faq-content">
+                        <p>
+                          Yes, our maintenance and support team ensures smooth
+                          operation of all installed equipment with timely service
+                          and assistance.
+                        </p>
+                      </div>
+                      <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+                    <!-- End Faq item-->
+
+                    <div class="faq-item">
+                      <h3>How can I request a custom quote?</h3>
+                      <div class="faq-content">
+                        <p>
+                          You can contact us through our website or call our sales
+                          team directly to discuss your requirements and receive a
+                          tailored quote.
+                        </p>
+                      </div>
+                      <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div>
+                    <!-- End Faq item-->
+                  </div>
+                </div>
+                <!-- End Faq Column-->
+              </div>
+            </div>
+          </section>
+          <!-- /Faq Section -->
+
+          <!-- Portfolio Section -->
+          <!-- <section id="portfolio" class="portfolio section">
+      Section Title
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Check our latest work</p>
+      </div>
+      End Section Title
+
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Flow Jet Pump</li>
+            <li data-filter=".filter-product">Water Solutions</li>
+            <li data-filter=".filter-branding">Water Treatment</li>
+            <li data-filter=".filter-books">Crane</li>
+          </ul> -->
+          <!-- End Portfolio Filters -->
+
+          <!-- <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>App 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+          <!-- 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Product 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/product-1.jpg" title="Product 1"
+                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Branding 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1"
+                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+          <!-- 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Books 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+            End Portfolio Item -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>App 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Product 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2"
+                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Branding 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2"
+                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Books 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+          <!-- 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>App 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+          <!-- 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Product 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3"
+                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+          <!-- 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Branding 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2"
+                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div> -->
+          <!-- End Portfolio Item -->
+
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="" />
+                <div class="portfolio-info">
+                  <h4>Books 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book"
+                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+            End Portfolio Item
+          </div>
+          End Portfolio Container
+        </div>
+      </div>
+    </section> -->
+          <!-- /Portfolio Section -->
+
+          <!-- Team Section -->
+          <!-- <section id="team" class="team section">
+      Section Title
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Our hard working team</p>
+      </div> -->
+          <!-- End Section Title -->
+
+          <!-- <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+               <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Chief Executive Officer</span>
+                <p>
+                  Velit aut quia fugit et et. Dolorum ea voluptate vel tempore
+                  tenetur ipsa quae aut. Ipsum exercitationem iure minima enim
+                  corporis et voluptate.
+                </p>
+              </div>
+            </div>
+          </div> -->
+          <!-- End Team Member -->
+
+          <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="" />
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Product Manager</span>
+                <p>
+                  Quo esse repellendus quia id. Est eum et accusantium
+                  pariatur fugit nihil minima suscipit corporis. Voluptate sed
+                  quas reiciendis animi neque sapiente.
+                </p>
+              </div>
+            </div>
+          </div> -->
+          <!-- End Team Member -->
+          <!-- 
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="" />
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+                <p>
+                  Vero omnis enim consequatur. Voluptas consectetur unde qui
+                  molestiae deserunt. Voluptates enim aut architecto porro
+                  aspernatur molestiae modi.
+                </p>
+              </div>
+            </div>
+          </div>
+          < End Team Member -->
+
+          <!-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="" />
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+                <p>
+                  Rerum voluptate non adipisci animi distinctio et deserunt
+                  amet voluptas. Quia aut aliquid doloremque ut possimus ipsum
+                  officia.
+                </p>
+              </div>
+            </div>
+          </div> -->
+          <!-- End Team Member
+        </div>
+      </div>
+    </section> -->
+          <!-- /Team Section -->
+
+
+
+
+
+
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <!-- </div>
+    </section> -->
+            <!-- /Testimonials Section -->
+            <!-- product Section -->
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact section">
+              <!-- Section Title -->
+              <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>Reach Out for Expert Guidance on Pumps, Water Solutions & More.</p>
+              </div>
+              <!-- End Section Title -->
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                  <div class="col-lg-6">
+                    <div class="row gy-4">
+                      <div class="col-md-6">
+                        <div class="info-item h-100" data-aos="fade" data-aos-delay="200">
+                          <i class="bi bi-geo-alt"></i>
+                          <h3>Address</h3>
+                          <p>
+                            Pragati Flowtech Pvt Ltd
+                            104, Panchshil The Golden Bell,
+                            Pingale Wasti, Koregaon Park
+                            Annexe, Mundhwa, Pune,
+                            Maharashtra 411036
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- End Info Item -->
+
+                      <div class="col-md-6">
+                        <div class="info-item h-100" data-aos="fade" data-aos-delay="300">
+                          <i class="bi bi-telephone"></i>
+                          <h3>Call Us</h3>
+                          <p>+919175106075</p>
+
+                        </div>
+                      </div>
+                      <!-- End Info Item -->
+
+                      <div class="col-md-6">
+                        <div class="info-item h-100" data-aos="fade" data-aos-delay="400">
+                          <i class="bi bi-envelope"></i>
+                          <h3>Email Us</h3>
+                          <p>sales@pragati-in.com</p>
+
+                        </div>
+                      </div>
+                      <!-- End Info Item -->
+
+                      <div class="col-md-6">
+                        <div class="info-item h-100" style="height: 100% !important;" data-aos="fade"
+                          data-aos-delay="500">
+                          <i class="bi bi-clock"></i>
+                          <h3>Open Hours</h3>
+                          <p>Monday - Friday</p>
+                          <p>9:00AM - 05:00PM</p>
+                        </div>
+                      </div>
+                      <!-- End Info Item -->
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                      data-aos-delay="200">
+                      <div class="row gy-4">
+                        <div class="col-md-6">
+                          <input type="text" name="name" class="form-control" placeholder="Your Name" required="" />
+                        </div>
+
+                        <div class="col-md-6">
+                          <input type="email" class="form-control" name="email" placeholder="Your Email" required="" />
+                        </div>
+
+                        <div class="col-12">
+                          <input type="text" class="form-control" name="subject" placeholder="Subject" required="" />
+                        </div>
+
+                        <div class="col-12">
+                          <textarea class="form-control" name="message" rows="6" placeholder="Message"
+                            required=""></textarea>
+                        </div>
+
+                        <div class="col-12 text-center">
+                          <div class="loading">Loading</div>
+                          <div class="error-message"></div>
+                          <div class="sent-message">
+                            Your message has been sent. Thank you!
+                          </div>
+
+                          <button type="submit">Send Message</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- End Contact Form -->
+                </div>
+              </div>
+            </section>
+            <!-- /Contact Section -->
+  </main>
+
+  <footer id="footer" class="footer">
+    <!-- <div class="footer-newsletter"> -->
+    <div class="container">
+      <!-- <div class="row justify-content-center text-center"> -->
+      <!-- <div class="col-lg-6">
+               <h4>Join Our Newsletter</h4>
+               <p>
+                 Subscribe to our newsletter and receive the latest news about
+                 our products and services!
+               </p>
+               <form action="forms/newsletter.php" method="post" class="php-email-form">
+                 <div class="newsletter-form">
+                   <input type="email" name="email" /><input type="submit" value="Subscribe" />
+                 </div>
+                 <div class="loading">Loading</div>
+                 <div class="error-message"></div>
+                 <div class="sent-message">
+                   Your subscription request has been sent. Thank you!
+                 </div>
+               </form>
+               </div> -->
+    </div>
+    </div>
+    </div>
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Pragati Flow Tech Pvt Ltd</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p class="mt-3">
+              <i class="bi bi-telephone"><span class="ms-2">+919175106075</span></i>
+            </p>
+            <p>
+              <i class="bi bi-envelope"><span class="ms-2">sales@pragati-in.com</span></i>
+            </p>
+            <p>
+              <i class="bi bi-globe"><span class="ms-2">www.pragatiflowtech.in</span></i>
+            </p>
+            <p>
+              <i class="bi bi-geo-alt"> <span class="ms-2">Pragati Flowtech Pvt Ltd
+                  104, Panchshil The Golden Bell,
+                  Pingale Wasti, Koregaon Park
+                  Annexe, Mundhwa, Pune,
+                  Maharashtra 411036</span></i>
+            </p>
+            <!-- <p><strong>Email:</strong> <span>info@example.com</span></p> -->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="./index.html">Home</a></li>
+            <li>
+              <i class="bi bi-chevron-right"></i> <a href="./about.html">About us</a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i> <a href="./Testinominal.html">Testimonial</a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="./blog.html">Blog</a>
+            </li>
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="./blog.html">Contact </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Join Our Journey in Flow Technology</p>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+       <p>
+                © <span>Copyright</span>
+                <strong class="px-1 sitename">Anvation Digital Marketing LLP</strong>
+                <span>All Rights Reserved</span>
+            </p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
+                  href=“https://themewagon.com>ThemeWagon -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
