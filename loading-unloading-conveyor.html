@@ -1,0 +1,356 @@
+<!-- <style>
+  /* Carousel Container Styling */
+  #heroCarousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-control-prev {
+    margin-left: -100px !important;
+    /* Your specified margin */
+    z-index: 10 !important;
+    /* Bring the button to the front */
+    position: relative;
+    /* Ensure proper positioning */
+  }
+
+
+  @media (max-width: 767.98px) {
+    .carousel-control-prev {
+      margin-left: 0px !important;
+    }
+  }
+
+  .carousel-control-next {
+    margin-right: -5px !important;
+    /* From your previous request for the Next button */
+    z-index: 10 !important;
+    /* Ensure Next button is also visible */
+    position: relative;
+  }
+
+  /* Prevent clipping by the carousel container */
+  .carousel {
+    overflow: visible !important;
+  }
+
+  /* If the container or section is also clipping, adjust it */
+  .container,
+  .hero.section {
+    overflow: visible !important;
+  }
+
+  /* Carousel Buttons */
+  .carousel-control-prev-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    left: -15px !important;
+  }
+
+  .carousel-control-next-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    right: -15px !important;
+  }
+
+  /* Custom Arrows */
+  .carousel-control-prev-icon::after,
+  .carousel-control-next-icon::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid var(--accent-color);
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+  }
+
+  .carousel-control-prev-icon::after {
+    transform: rotate(135deg);
+  }
+
+  .carousel-control-next-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  /* Optional: Remove Bootstrap mask */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-image: none !important;
+  }
+
+  /* Carousel Indicators (Dots) */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.4;
+    border: none;
+    margin: 0 6px;
+    transition: opacity 0.3s ease;
+    color: var(--accent-color);
+  }
+
+  .carousel-indicators .active {
+    opacity: 1;
+  }
+
+  .carousel-item{
+
+  }
+</style> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title> Lowara </title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+</head>
+
+<body class="flowjet-page">
+   <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/flextrack_logo.png" alt="" />
+        <!-- <h1 class="sitename">FlexStart</h1> -->
+      </a>
+      <nav id="navmenu" class="navmenu m-auto">
+
+      </nav>
+
+      <script>
+        fetch('/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navmenu').innerHTML = data;
+          });
+      </script>
+      <!-- <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Get Started</a> -->
+    </div>
+  </header>
+
+    <!-- Page Title -->
+    <div class="page-title sub-page-title">
+        <div class="heading p-5">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-11">
+                        <h1> conveyor  </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="./index.html">Home</a></li>
+                    <li class="current"> Loading-unloading-conveyor  </li>
+                    <!-- <li class="current">Diaphragm and Bladder Expansion Vessels</li> -->
+                </ol>
+            </div>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+
+    <section id="values" class="values section">
+        <!-- Section Title -->
+        <!-- End Section Title -->
+        <!-- <div class="container" data-aos="fade-up">
+            <div class="row content">
+                <div class="col-lg-12 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <h2 style="font-weight: bold;"> </h2>
+                        <p>
+                          
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+       
+
+        <div class="container mt-5 p-0">
+            <div class="col-12 text-center">
+                <h2 class="p-2" style="font-weight: bold; background-color: var(--accent-color); color:white;">
+                  Loading-unloading-conveyor   </h2>
+            </div>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara – eNSC- End Suction Back Pullout Design Pump.png" class="img-fluid" alt="" />
+                        <h3> Lowara – eNSC- End Suction Back Pullout Design Pump   </h3>
+                        <p class="text-start">
+                         Series e-NSC takes end suction pumps to the next level, offering exceptional efficiency,
+                          durability, and flexible installation. With a design optimized for energy savings and long service life, the e-NSC is the ideal solution for water transport, hydronic heating and chiller systems, fire protection, and a wide range of industrial applications.     
+                        
+                        <h5 class=""> Product Features </h5>
+                        <ul class="list-unstyled text-start">
+                            <li class="mt-1">
+                                <i class="bi bi-check-circle"></i><span class="p-3"> High-efficiency design for reduced operational costs </span>
+                            </li>
+                            <li class="mt-2">
+                                <i class="bi bi-check-circle"></i><span class="p-3"> Optional motor-mounted variable speed controller (up to 22 kW) </span>
+                            </li>
+                            <li class="mt-2">
+                                <i class="bi bi-check-circle"></i><span class="p-3"> Robust construction with replaceable wear rings for extended service life and simplified maintenance </span>
+                            </li>
+                            <li class="mt-2">
+                                <i class="bi bi-check-circle"></i><span class="p-3"> Flow rates up to 1800 m³/h </span>
+                            </li>
+                             <li class="mt-2">
+                                <i class="bi bi-check-circle"></i><span class="p-3"> Heads up to 160 m </span>
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- End Card Item -->
+
+                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara – eSV – Vertical Multistage Pumps.png" class="img-fluid" alt="" />
+                        <h3> Lowara – eSV – Vertical Multistage Pumps  
+                        </h3>
+                        <p class="text-start">
+                          Series e-SV vertical multistage pumps are high-efficiency solutions designed to minimize operating costs across residential, light commercial, OEM, and HVAC applications. Engineered for reliability and versatility, the e-SV is a technologically advanced, multipurpose pump range that meets the needs of a wide variety of users. 
+                          Available in eleven sizes with nominal capacities of 1, 3, 5, 10, 15, 22, 33, 46, 66, 92, and 125 m³/h, the e-SV series offers multiple construction variants to suit diverse installation and performance requirements. 
+                        </p>
+                    </div>
+                </div> -->
+                <!-- End Card Item -->
+
+                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara eMPV Series.png" class="img-fluid" alt="" />
+                        <h3> Lowara eMPV Series   </h3>
+                        <p class="text-start">
+                          Series eMPV is a vertical shaft multistage pump featuring radial suction and discharge nozzles that can be configured at 0°, 90°, 180°, or 270°. The drive is mounted on the discharge side, which includes a double-row angular ball bearing, while the suction side is supported by a slide bearing. Axial thrust is balanced by a drum design, and shaft sealing is required only on the discharge side. Available as a bare shaft or complete pump unit, it supports NEMA standard motors up to 650 hp.
+                           Designed for pumped liquids between 14°F and 200°F (-10°C to 93°C) and inlet pressures up to 145 psi (10 bar), stainless steel variants are NSF/ANSI 61 and 372 certified. 
+                          </p>
+                    </div>
+                </div> -->
+                <!-- End Card Item -->
+
+                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara MPD Series.png" class="img-fluid" alt="" />
+                        <h3>Lowara MPD Series </h3> 
+                        <p class="text-start">
+                         Series MPD is a horizontal shaft multistage pump featuring radial suction and discharge nozzles, configurable on the left, top, or right. The drive is positioned on the discharge side, with an option for suction-side drive. It includes a double-row angular ball bearing on the discharge side and a deep groove ball bearing on the suction side, with axial thrust balanced by a drum design. Shaft sealing is provided on both the suction and discharge sides. Available as a bare shaft pump or a complete unit, it is compatible with NEMA standard motors. Designed for liquid temperatures from 14°F to 284°F (-10°C to 140°C) and inlet pressures up to 580 psi (40 bar), stainless steel models are certified to NSF/ANSI 61 and 372 standards. 
+                          </p>
+                    </div>
+                </div> -->
+                <!-- End Card Item -->
+<!-- 
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara – eHM – Horizontal Multistage Pumps.png" class="img-fluid" alt="" />
+                        <h3> Lowara – eHM – Horizontal Multistage Pumps </h3>
+                        <p class="text-start">
+                         Series e-HM horizontal multistage pumps from Lowara are built with a modern, robust design to deliver reliable performance and long service life. Featuring state-of-the-art hydraulics and high-efficiency IE3 motors, the e-HM series ensures minimal operating costs. Constructed with thick sheet metal casing, high-quality bearings, and stainless-steel components, these pumps offer excellent durability. The combination of efficient hydraulics, premium motor technology,
+                          and sturdy construction also results in exceptionally low noise levels, making them ideal for a wide range of applications. 
+                        </p>
+                    </div>
+                </div> -->
+                <!-- End Card Item -->
+<!-- 
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="assets/img/products/REFLEX/ReflexV.png" class="img-fluid" alt="" />
+                        <h3> Lowara – eHM – Horizontal Multistage Pumps 
+                        </h3>
+                        <p class="text-start">
+                        Series e-HM horizontal multistage pumps from Lowara are built with a modern, robust design to deliver reliable performance and long service life. Featuring state-of-the-art hydraulics and high-efficiency IE3 motors, the e-HM series ensures minimal operating costs. Constructed with thick sheet metal casing, high-quality bearings, and stainless-steel components,
+                         these pumps offer excellent durability. The combination of efficient hydraulics, premium motor technology, and sturdy construction also results in exceptionally low noise levels, making them ideal for a wide range of applications. 
+                    </div>
+                </div> -->
+                <!-- End Card Item -->
+
+            </div>
+        </div>
+    </section>
+
+  <footer id="footer" class="footer">
+
+  </footer>
+
+  <script>
+    fetch('/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
