@@ -848,18 +848,20 @@ section,
 }
 
 .section-title h2 {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 1px;
   font-weight: 700;
-  padding: 8px 20px;
   margin: 0;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
-  display: inline-block;
+  color: transparent;
+  /* makes text transparent for gradient */
+  background: linear-gradient(90deg, rgba(240, 15, 15, 1) 0%, rgba(92, 3, 18, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  border-radius: 50px;
   font-family: var(--default-font);
 }
+
+
 
 .section-title p {
   color: var(--heading-color);
@@ -1113,6 +1115,7 @@ section,
   margin-bottom: 18px;
   margin-top: 18px;
   color: var(--accent-color);
+
 }
 
 .values .card:hover {
@@ -2898,4 +2901,11 @@ section,
   background-position: center;
   content: "";
 
+}
+
+.productheading {
+  background: linear-gradient(90deg, rgba(240, 15, 15, 1) 0%, rgba(92, 3, 18, 1) 100%);
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
