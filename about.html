@@ -125,23 +125,30 @@
 </head>
 
 <body class="flowjet-page">
-  <!-- Watermark -->
-  <div class="watermark"></div>
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/pragati_logo.png" alt="" />
+        <img src="assets/img/flextrack_logo.png" alt="" />
         <!-- <h1 class="sitename">FlexStart</h1> -->
       </a>
-      <nav id="navmenu" class="navmenu m-auto">
+
+      <nav id="navmenu" class="navmenu ">
 
       </nav>
+      <script>
+        fetch('/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navmenu').innerHTML = data;
+          });
+      </script>
+
       <!-- <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Get Started</a> -->
     </div>
   </header>
 
-<!-- Page Title -->
+  <!-- Page Title -->
   <div class="page-title sub-page-title">
     <div class="heading">
       <div class="container">
@@ -151,7 +158,8 @@
             <p>
               Flextrack Belting is a leading manufacturer of innovative conveyor systems and belting solutions with over
               8 years of expertise. We specialize in delivering high-quality, customized conveyor belts, rollers, and
-              accessories for a wide range of industries, including manufacturing, logistics, and packaging. Our commitment
+              accessories for a wide range of industries, including manufacturing, logistics, and packaging. Our
+              commitment
               to precision engineering and sustainability ensures efficient, reliable, and durable solutions tailored to
               meet our clients' unique needs.
             </p>
@@ -172,7 +180,8 @@
             <i class=""><img src="assets/img/products/vision.jpeg" style="height: 60px; width: 60px" /></i>
             <h2>Vision</h2>
             <p>
-              To be the global leader in conveyor and belting solutions, driving innovation and sustainability in material
+              To be the global leader in conveyor and belting solutions, driving innovation and sustainability in
+              material
               handling systems across industries.
             </p>
           </div>
@@ -236,7 +245,8 @@
             <h3>Roller and Screw Conveyors</h3>
             <p class="text-justify">
               Our roller conveyors, including power, flexible, skate wheel, and gravity systems, are designed for
-              versatility and reliability in material transport. Additionally, our horizontal and incline screw conveyors
+              versatility and reliability in material transport. Additionally, our horizontal and incline screw
+              conveyors
               offer robust solutions for bulk material handling, delivering precision and efficiency across industries
               such as agriculture, food processing, and construction.
             </p>
@@ -343,11 +353,11 @@
       </div>
     </div>
     <div class="container copyright text-center mt-4">
-       <p>
-                © <span>Copyright</span>
-                <strong class="px-1 sitename">Anvation Digital Marketing LLP</strong>
-                <span>All Rights Reserved</span>
-            </p>
+      <p>
+        © <span>Copyright</span>
+        <strong class="px-1 sitename">Anvation Digital Marketing LLP</strong>
+        <span>All Rights Reserved</span>
+      </p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->

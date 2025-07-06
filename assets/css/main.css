@@ -356,14 +356,26 @@ h6 {
     color: var(--nav-color);
     font-size: 28px;
     line-height: 0;
-    margin-right: 10px;
+    margin-left: auto;
+    /* Push to the right end */
+    margin-right: 30px;
     cursor: pointer;
     transition: color 0.3s;
+    position: relative;
+    z-index: 9999;
+    /* Ensure it stays above the navmenu */
   }
 
   .navmenu {
     padding: 0;
-    z-index: 9997;
+    margin: 0 !important;
+    position: relative;
+    display: flex;
+    /* Use flex to manage child elements */
+    justify-content: flex-end;
+    width: 100% !important;
+
+    /* Align children (including toggle) to the right */
   }
 
   .navmenu ul {
@@ -479,6 +491,12 @@ h6 {
 
 /* Listing Dropdown - Desktop */
 @media (min-width: 1200px) {
+  .navmenu {
+    margin-left: 90px !important;
+    margin-right: 90px !important;
+
+  }
+
   .navmenu .listing-dropdown {
     position: static;
   }
@@ -1021,7 +1039,7 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about .content {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
   padding: 40px;
 }
 

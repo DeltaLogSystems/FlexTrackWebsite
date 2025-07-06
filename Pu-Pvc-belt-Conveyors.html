@@ -127,32 +127,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title> Lowara </title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!-- Favicons -->
-    <link href="assets/img/favicon.ico" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title> Lowara </title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet" />
 </head>
+<style>
+  /* Product Gallery */
+  .product-gallery {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+  }
+
+  .product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(37, 99, 235, 0.8);
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .carousel-control-prev {
+    left: -25px;
+  }
+
+  .carousel-control-next {
+    right: -25px;
+  }
+</style>
 
 <body class="flowjet-page">
-   <header id="header" class="header d-flex align-items-center fixed-top">
+  <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -174,33 +214,33 @@
     </div>
   </header>
 
-    <!-- Page Title -->
-    <div class="page-title sub-page-title">
-        <div class="heading p-5">
-            <div class="container">
-                <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-11">
-                        <h1> Conveyor </h1>
-                    </div>
-                </div>
-            </div>
+  <!-- Page Title -->
+  <div class="page-title sub-page-title">
+    <div class="heading p-5">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-11">
+            <h1> Conveyor </h1>
+          </div>
         </div>
-        <nav class="breadcrumbs">
-            <div class="container">
-                <ol>
-                    <li><a href="./index.html">Home</a></li>
-                    <li class="current"> Pu-Pvc-belt-Conveyors </li>
-                    <!-- <li class="current">Diaphragm and Bladder Expansion Vessels</li> -->
-                </ol>
-            </div>
-        </nav>
+      </div>
     </div>
-    <!-- End Page Title -->
+    <nav class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="./index.html">Home</a></li>
+          <li class="current"> PU/PVC Belt Conveyor </li>
+          <!-- <li class="current">Diaphragm and Bladder Expansion Vessels</li> -->
+        </ol>
+      </div>
+    </nav>
+  </div>
+  <!-- End Page Title -->
 
-    <section id="values" class="values section">
-        <!-- Section Title -->
-        <!-- End Section Title -->
-        <!-- <div class="container" data-aos="fade-up">
+  <section id="values" class="values section">
+    <!-- Section Title -->
+    <!-- End Section Title -->
+    <!-- <div class="container" data-aos="fade-up">
             <div class="row content">
                 <div class="col-lg-12 d-flex flex-column" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-center">
@@ -213,17 +253,73 @@
             </div>
         </div> -->
 
-       
 
-        <div class="container mt-5 p-0">
-            <div class="col-12 text-center">
-                <h2 class="p-2" style="font-weight: bold; background-color: var(--accent-color); color:white;">
-                  Pu-Pvc-belt-Conveyors  </h2>
+
+    <div class="container mt-5 p-0">
+      <div class="col-12 text-center">
+        <h4 class="p-2" style="font-weight: bold; background-color: var(--accent-color); color:white;">
+          PU/PVC Belt Conveyor </h4>
+      </div>
+      <div class="container">
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item ">
+              <div class="row">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img src="assets/img/products/Pvc/23.jpg" class="img-fluid" alt="" />
+                  </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img src="assets/img/products/Pvc/puc-2.jpg" class="img-fluid" alt="" />
+                  </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img src="assets/img/products/Pvc/puc.jpg" class="img-fluid" alt="" />
+                  </div>
+                </div>
+
+              </div>
             </div>
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img src="assets/img/products/Pvc/PVCBelt_1.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
 
-            <div class=" container row gy-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img src="assets/img/products/Pvc/loading-belt.jpg" class="img-fluid" alt="" />
+                  </div>
+                </div>
 
-                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img src="assets/img/products/Pvc/shutterstock_736275754.jpg" class="img-fluid" alt="" />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class=" container row gy-4">
+
+        <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card">
                         <img src="assets/img/products/puc.jpg" class="img-fluid" alt="" />
                         <h3> Lowara – eNSC- End Suction Back Pullout Design Pump   </h3>
@@ -231,154 +327,80 @@
                     </div>
                 </div> -->
 
-   <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                     <img src="assets/img/products/Pvc/puc.jpg" class="img-fluid" alt="" />
-                     </div>
-                     </div>
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                     <img src="assets/img/products/Pvc/puc-2.jpg" class="img-fluid" alt="" />
-                     </div>
-                     </div>
 
-                       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                     <img src="assets/img/products/Pvc/puc.jpg" class="img-fluid" alt="" />
-                     </div>
-                     </div>
+        <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+          <div class="card">
+            <!-- <img src="assets/img/products/puc.jpg" class="img-fluid" alt="" /> -->
+            <!-- <h3> Lowara – eNSC- End Suction Back Pullout Design Pump   </h3> -->
+            <p class="text-start">
 
-                   <div class="col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                     <!-- <img src="assets/img/products/puc.jpg" class="img-fluid" alt="" /> -->
-                        <!-- <h3> Lowara – eNSC- End Suction Back Pullout Design Pump   </h3> -->
-                        <p class="text-start">
-                         
-                        Our PU and PVC Belt Conveyors are designed for efficient and safe material transfer across a wide range of industries. These belts are manufactured in various colors 
-                        such as white (food grade), green, and black, and are available in 1-ply, 2-ply, and 3-ply configurations with thickness ranging from 2mm to 6mm.   </p>
-                       <p class="text-start"> PU (Polyurethane) belts are 100% non-toxic and FDA approved, making them ideal for direct food contact. They offer superior mechanical strength and chemical resistance compared to conventional belts.</p>
-                       <p class="text-start"> PVC (Polyvinyl Chloride) belts are widely used for lightweight to moderate load handling, offering excellent flexibility and durability.</p>
-                    
+              Our PU and PVC Belt Conveyors are designed for efficient and safe material transfer across a wide range of
+              industries. These belts are manufactured in various colors
+              such as white (food grade), green, and black, and are available in 1-ply, 2-ply, and 3-ply configurations
+              with thickness ranging from 2mm to 6mm. </p>
+            <p class="text-start"> PU (Polyurethane) belts are 100% non-toxic and FDA approved, making them ideal for
+              direct food contact. They offer superior mechanical strength and chemical resistance compared to
+              conventional belts.</p>
+            <p class="text-start"> PVC (Polyvinyl Chloride) belts are widely used for lightweight to moderate load
+              handling, offering excellent flexibility and durability.</p>
 
-                       
-                       
-            
-              
+            <div class="row">
+              <div class="col-lg-6">
+                <h5 class="text-start"> Types Available</h5>
+                <ul class="list-unstyled text-start">
+                  <li class="mt-1">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Straight Conveyors</span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Loading/Unloading Conveyors </span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Expandable Conveyors </span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Incline/Decline Conveyors </span>
+                  </li>
 
-             
-                <div class="row">        
- <div class="col-lg-6">
-                        <h5 class="text-start">  Types Available</h5>
-                        <ul class="list-unstyled text-start">
-                            <li class="mt-1">
-                                <i class="bi bi-check-circle"></i><span class="p-3">  Straight Conveyors</span>
-                            </li>
-                            <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3">    Loading/Unloading Conveyors </span>
-                            </li>
-                            <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3">  Expandable Conveyors </span>
-                            </li>
-                            <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3">   Incline/Decline Conveyors </span>
-                            </li>
-                             
-                        </ul></div>
-                      
+                             
+                </ul>
+              </div>
 
-                        <div class="col-lg-6">
-                        <h5 class="text-start"> Application </h5>
-                        <ul class="list-unstyled text-start">
-                            <li class="mt-1">
-                                <i class="bi bi-check-circle"></i><span class="p-3"> ApplicationsIdeal for a variety of industries including:</span>
-                            </li>
-                            <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3"> Food & Pharma </span>
-                            </li>
-                            <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3"> Bakery & Confectionery </span>
-                            </li>
-                            <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3"> Automotive </span>
-                            </li>
-                             <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3"> Electrical & Electronics</span>
-                            </li>
-                             <li class="mt-2">
-                                <i class="bi bi-check-circle"></i><span class="p-3"> Glass, Ply, and Board Handling </span>
-                            </li>
-                        </ul></div>
-                      
-                    </div>
-                </div>
-                </div>
-                <!-- End Card Item -->
 
-                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card">
-                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara – eSV – Vertical Multistage Pumps.png" class="img-fluid" alt="" />
-                        <h3> Lowara – eSV – Vertical Multistage Pumps  
-                        </h3>
-                        <p class="text-start">
-                          Series e-SV vertical multistage pumps are high-efficiency solutions designed to minimize operating costs across residential, light commercial, OEM, and HVAC applications. Engineered for reliability and versatility, the e-SV is a technologically advanced, multipurpose pump range that meets the needs of a wide variety of users. 
-                          Available in eleven sizes with nominal capacities of 1, 3, 5, 10, 15, 22, 33, 46, 66, 92, and 125 m³/h, the e-SV series offers multiple construction variants to suit diverse installation and performance requirements. 
-                        </p>
-                    </div>
-                </div> -->
-                <!-- End Card Item -->
-
-                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara eMPV Series.png" class="img-fluid" alt="" />
-                        <h3> Lowara eMPV Series   </h3>
-                        <p class="text-start">
-                          Series eMPV is a vertical shaft multistage pump featuring radial suction and discharge nozzles that can be configured at 0°, 90°, 180°, or 270°. The drive is mounted on the discharge side, which includes a double-row angular ball bearing, while the suction side is supported by a slide bearing. Axial thrust is balanced by a drum design, and shaft sealing is required only on the discharge side. Available as a bare shaft or complete pump unit, it supports NEMA standard motors up to 650 hp.
-                           Designed for pumped liquids between 14°F and 200°F (-10°C to 93°C) and inlet pressures up to 145 psi (10 bar), stainless steel variants are NSF/ANSI 61 and 372 certified. 
-                          </p>
-                    </div>
-                </div> -->
-                <!-- End Card Item -->
-
-                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara MPD Series.png" class="img-fluid" alt="" />
-                        <h3>Lowara MPD Series </h3> 
-                        <p class="text-start">
-                         Series MPD is a horizontal shaft multistage pump featuring radial suction and discharge nozzles, configurable on the left, top, or right. The drive is positioned on the discharge side, with an option for suction-side drive. It includes a double-row angular ball bearing on the discharge side and a deep groove ball bearing on the suction side, with axial thrust balanced by a drum design. Shaft sealing is provided on both the suction and discharge sides. Available as a bare shaft pump or a complete unit, it is compatible with NEMA standard motors. Designed for liquid temperatures from 14°F to 284°F (-10°C to 140°C) and inlet pressures up to 580 psi (40 bar), stainless steel models are certified to NSF/ANSI 61 and 372 standards. 
-                          </p>
-                    </div>
-                </div> -->
-                <!-- End Card Item -->
-<!-- 
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                        <img src="assets/img/products/PRODUCT_WITH_logo/Lowara – eHM – Horizontal Multistage Pumps.png" class="img-fluid" alt="" />
-                        <h3> Lowara – eHM – Horizontal Multistage Pumps </h3>
-                        <p class="text-start">
-                         Series e-HM horizontal multistage pumps from Lowara are built with a modern, robust design to deliver reliable performance and long service life. Featuring state-of-the-art hydraulics and high-efficiency IE3 motors, the e-HM series ensures minimal operating costs. Constructed with thick sheet metal casing, high-quality bearings, and stainless-steel components, these pumps offer excellent durability. The combination of efficient hydraulics, premium motor technology,
-                          and sturdy construction also results in exceptionally low noise levels, making them ideal for a wide range of applications. 
-                        </p>
-                    </div>
-                </div> -->
-                <!-- End Card Item -->
-<!-- 
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                        <img src="assets/img/products/REFLEX/ReflexV.png" class="img-fluid" alt="" />
-                        <h3> Lowara – eHM – Horizontal Multistage Pumps 
-                        </h3>
-                        <p class="text-start">
-                        Series e-HM horizontal multistage pumps from Lowara are built with a modern, robust design to deliver reliable performance and long service life. Featuring state-of-the-art hydraulics and high-efficiency IE3 motors, the e-HM series ensures minimal operating costs. Constructed with thick sheet metal casing, high-quality bearings, and stainless-steel components,
-                         these pumps offer excellent durability. The combination of efficient hydraulics, premium motor technology, and sturdy construction also results in exceptionally low noise levels, making them ideal for a wide range of applications. 
-                    </div>
-                </div> -->
-                <!-- End Card Item -->
+              <div class="col-lg-6">
+                <h5 class="text-start"> Application </h5>
+                <ul class="list-unstyled text-start">
+                  <li class="mt-1">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> ApplicationsIdeal for a variety of industries
+                      including:</span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Food & Pharma </span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Bakery & Confectionery </span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Automotive </span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Electrical & Electronics</span>
+                  </li>
+                  <li class="mt-2">
+                    <i class="bi bi-check-circle"></i><span class="p-3"> Glass, Ply, and Board Handling </span>
+                  </li>
+                             
+                </ul>
+              </div>
 
             </div>
+          </div>
         </div>
-    </section>
 
- 
+      </div>
+    </div>
+  </section>
+
+
   <footer id="footer" class="footer">
 
   </footer>
@@ -391,24 +413,22 @@
       });
   </script>
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
-
-
