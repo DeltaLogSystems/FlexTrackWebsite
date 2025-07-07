@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title> Flextrack </title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+</head>
+<style>
+    .specifications {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .spec-header {
+        display: flex;
+        color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        background: linear-gradient(90deg, rgba(240, 15, 15, 1) 0%, rgba(92, 3, 18, 1) 100%);
+    }
+
+    .spec-header div {
+        padding: 5px;
+        text-align: center;
+        font-weight: bold;
+        flex: 1;
+
+    }
+
+
+
+    .belt-data-table {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .belt-data-header {
+        background: linear-gradient(90deg, rgba(240, 15, 15, 1) 0%, rgba(92, 3, 18, 1) 100%);
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .belt-data-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 1px;
+        background: #bdc3c7;
+    }
+
+    .belt-data-content div {
+        background: white;
+        padding: 3px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 15px !important;
+    }
+
+    .belt-data-content div:nth-child(4n+1) {
+        background: #ecf0f1;
+        text-align: left;
+        padding-left: 12px;
+    }
+
+    .sprocket-section {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .sprocket-header {
+        background: linear-gradient(90deg, rgba(240, 15, 15, 1) 0%, rgba(92, 3, 18, 1) 100%);
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .sprocket-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: #bdc3c7;
+    }
+
+    .sprocket-content div {
+        background: white;
+        padding: 5px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .sprocket-content div:nth-child(odd) {
+        background: #ecf0f1;
+        font-weight: bold;
+    }
+
+    .flight-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .flight-box {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .flight-header {
+        background: linear-gradient(90deg, rgba(240, 15, 15, 1) 0%, rgba(92, 3, 18, 1) 100%);
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .flight-content {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .flight-values {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .flight-value {
+        background: #ecf0f1;
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .product-content {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .belt-data-content {
+            grid-template-columns: 1fr;
+        }
+
+        .flight-section {
+            grid-template-columns: 1fr;
+        }
+
+        .sprocket-content {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<body class="flowjet-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="assets/img/flextrack_logo.png" alt="" />
+                <!-- <h1 class="sitename">FlexStart</h1> -->
+            </a>
+            <nav id="navmenu" class="navmenu m-auto">
+
+            </nav>
+
+            <script>
+                fetch('/navbar.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('navmenu').innerHTML = data;
+                    });
+            </script>
+            <!-- <a class="btn-getstarted flex-md-shrink-0" href="index.html#about">Get Started</a> -->
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <div class="page-title sub-page-title">
+        <div class="heading p-5">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-11">
+                        <h1>Belt Accessories </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="./index.html">Products</a></li>
+                    <li>Accessories</li>
+                    <li class="current">Belt Accessories</li>
+                </ol>
+            </div>
+        </nav>
+    </div>
+    <!-- End Page Title -->
+
+
+    <style>
+    .accessories-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+
+    .accessories-heading {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 32px;
+        font-weight: 700;
+        color: #2c3e50;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .accessory-item {
+        background: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .accessory-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-header {
+        background: linear-gradient(90deg, rgba(240, 15, 15, 1) 0%, rgba(92, 3, 18, 1) 100%);
+        color: white;
+        padding: 15px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+    }
+
+    .product-content {
+        display: flex;
+        align-items: stretch;
+        min-height: 300px;
+    }
+
+    .product-images {
+        flex: 1;
+        display: flex;
+        background: #f8f9fa;
+        padding: 20px;
+        gap: 20px;
+        align-items: center;
+        border-right: 2px dashed #e0e0e0;
+    }
+
+    .product-photo {
+        flex: 1;
+        text-align: center;
+    }
+
+    .product-photo img {
+        width: 100%;
+        max-width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .product-photo img:hover {
+        transform: scale(1.05);
+    }
+
+    .product-diagram {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+    }
+
+    .product-diagram img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .product-diagram img:hover {
+        transform: scale(1.05);
+    }
+
+    .specifications-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin-top: 20px;
+        background: #fff;
+        border-radius: 0 0 10px 10px;
+        overflow: hidden;
+    }
+
+    .specifications-table th {
+        background: #6c757d;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        border-bottom: 3px solid #495057;
+    }
+
+    .specifications-table th:first-child {
+        background: #495057;
+        border-right: 3px solid #6c757d;
+    }
+
+    .specifications-table td {
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #dee2e6;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .specifications-table td:hover {
+        background: #e9ecef;
+        color: #2c3e50;
+    }
+
+    .specifications-table tr:first-child th {
+        border-bottom: 3px solid #495057;
+    }
+
+    .specifications-table tr:nth-child(even) td {
+        background: #f8f9fa;
+    }
+
+    .additional-specs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 20px;
+        background: #f8f9fa;
+        margin-top: 20px;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .spec-item {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .spec-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .spec-label {
+        font-weight: bold;
+        color: #495057;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .spec-value {
+        color: #6c757d;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .product-content {
+            flex-direction: column;
+        }
+
+        .product-images {
+            flex-direction: column;
+            gap: 15px;
+            border-right: none;
+            border-bottom: 2px dashed #e0e0e0;
+        }
+
+        .product-diagram {
+            border-left: none;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .specifications-table {
+            font-size: 12px;
+        }
+
+        .specifications-table th,
+        .specifications-table td {
+            padding: 8px 4px;
+        }
+
+        .additional-specs {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<section class="accessories-section">
+    
+    <!-- Cleat Product -->
+    <div class="accessory-item">
+        <div class="product-header">CLEAT (PRODUCT SUPPORT)</div>
+        <div class="product-content">
+            <div class="product-images">
+                <div class="product-photo">
+                    <img src="assets/img/products/Accessories/cleat.jpg" alt="Cleat Product Photo">
+                </div>
+            </div>
+            <div class="product-diagram">
+                <img src="assets/img/products/Accessories/cleat_diagram.jpg" alt="Cleat Technical Diagram">
+            </div>
+        </div>
+        <table class="specifications-table">
+            <tr>
+                <th rowspan="2">HEIGHT(MM)</th>
+                <th colspan="3">PITCH(MM) 20</th>
+                <th colspan="3">PITCH(MM) 25</th>
+                <th colspan="3">PITCH(MM) 50</th>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>50</td>
+                <td>75</td>
+                <td>25</td>
+                <td>50</td>
+                <td>75</td>
+                <td>25</td>
+                <td>50</td>
+                <td>75</td>
+            </tr>
+        </table>
+        <div class="additional-specs">
+            <div class="spec-item">
+                <div class="spec-label">Material</div>
+                <div class="spec-value">PP, POM</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Application</div>
+                <div class="spec-value">Incline Conveyor</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Compatibility</div>
+                <div class="spec-value">FT-20MM, FT-25MM, FT-50MM</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Wall Product -->
+    <div class="accessory-item">
+        <div class="product-header">SIDE WALL (SIDE GUARD)</div>
+        <div class="product-content">
+            <div class="product-images">
+                <div class="product-photo">
+                    <img src="assets/img/products/Accessories/side_wall.jpg" alt="Side Wall Product Photo">
+                </div>
+            </div>
+            <div class="product-diagram">
+                <img src="assets/img/products/Accessories/side_wall_diagram.jpg" alt="Side Wall Technical Diagram">
+            </div>
+        </div>
+        <table class="specifications-table">
+            <tr>
+                <th rowspan="2">HEIGHT(MM)</th>
+                <th colspan="3">PITCH(MM) 20</th>
+                <th colspan="3">PITCH(MM) 25</th>
+                <th colspan="3">PITCH(MM) 50</th>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>50</td>
+                <td>75</td>
+                <td>25</td>
+                <td>50</td>
+                <td>75</td>
+                <td>25</td>
+                <td>50</td>
+                <td>75</td>
+            </tr>
+        </table>
+        <div class="additional-specs">
+            <div class="spec-item">
+                <div class="spec-label">Material</div>
+                <div class="spec-value">PP, PE</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Application</div>
+                <div class="spec-value">Containment</div>
+            </div>
+            <div class="spec-item">
+                <div class="spec-label">Compatibility</div>
+                <div class="spec-value">FT-25MM, FT-50MM</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <footer id="footer" class="footer">
+
+    </footer>
+
+    <script>
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
