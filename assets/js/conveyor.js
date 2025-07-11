@@ -18,8 +18,8 @@ document.getElementById("hero-section").appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.1;
-controls.minDistance = 15;
-controls.maxDistance = 16;
+controls.minDistance = 15.3;
+controls.maxDistance = 15.3;
 controls.maxPolarAngle = Math.PI / 2.3;
 controls.minPolarAngle = 0;
 controls.enableZoom = false; // Disable zooming
@@ -155,7 +155,7 @@ function createPhotoFrame(x, y, z, rotationY, imagePath) {
     },
     undefined,
     (error) => {
-      console.error('Error loading texture:', error);
+      console.error("Error loading texture:", error);
     }
   );
 
@@ -924,10 +924,8 @@ function createWaterBottle() {
     true
   );
   const textureLoader = new THREE.TextureLoader();
-  const base64Image = "data:image/png;base64,ReplaceImage";
-
   const labelMaterial = new THREE.MeshBasicMaterial({
-    map: textureLoader.load(base64Image),
+    map: textureLoader.load("./assets/img/room/front_wall.png"),
     transparent: true,
     opacity: 0.9,
     side: THREE.DoubleSide,
@@ -1051,30 +1049,23 @@ function createPaperBox() {
   tape2.position.set(0, 1.1, 0);
   boxGroup.add(tape2);
 
-  const base64Image = "data:image/png;base64,ReplaceImage";
   const textureLoader = new THREE.TextureLoader();
-  textureLoader.load(base64Image, function (loadedTexture) {
-    const base64Material = new THREE.MeshLambertMaterial({
-      map: loadedTexture,
-      transparent: true,
-    });
-    const imagePlane = new THREE.Mesh(
-      new THREE.PlaneGeometry(2.5, 1.25),
-      base64Material
-    );
-    imagePlane.position.set(0, 0, 1.01);
-    imagePlane.castShadow = true;
-    boxGroup.add(imagePlane);
-  });
-
-  const labelGeometry = new THREE.PlaneGeometry(1, 0.5);
-  const labelTexture = textureLoader.load(base64Image);
-  const labelMaterial = new THREE.MeshLambertMaterial({ map: labelTexture });
-  const label = new THREE.Mesh(labelGeometry, labelMaterial);
-  label.position.set(1.51, -0.5, 0);
-  label.rotation.y = -Math.PI / 2;
-  label.castShadow = true;
-  boxGroup.add(label);
+  textureLoader.load(
+    "./assets/img/room/front_wall.png",
+    function (loadedTexture) {
+      const base64Material = new THREE.MeshLambertMaterial({
+        map: loadedTexture,
+        transparent: true,
+      });
+      const imagePlane = new THREE.Mesh(
+        new THREE.PlaneGeometry(2.5, 1.25),
+        base64Material
+      );
+      imagePlane.position.set(0, 0, 1.01);
+      imagePlane.castShadow = true;
+      boxGroup.add(imagePlane);
+    }
+  );
 
   boxGroup.scale.set(scale, scale, scale);
   boxGroup.position.y = 1.4;
@@ -1125,16 +1116,34 @@ let bottleCountInCorner4 = 0;
 createRoom();
 
 // Main Wall - Front
-createPhotoFrame(-14.9, 6, 0, Math.PI / 2, '../assets/img/room/front_wall.png');
+createPhotoFrame(-14.9, 6, 0, Math.PI / 2, "../assets/img/room/front_wall.png");
 
 // Opposite Front Wall
-createPhotoFrame(14.9, 6, 0, -Math.PI / 2, '../assets/img/room/wall_img_1.png');
+createPhotoFrame(
+  14.9,
+  6,
+  0,
+  -Math.PI / 2,
+  "../assets/img/products/PlasticBelt/shutterstock_1050938969.jpg"
+);
 
 // Left Wall
-createPhotoFrame(0, 6, -14.9, 0, '../assets/img/room/wall_img_2.png');
+createPhotoFrame(
+  0,
+  6,
+  -14.9,
+  0,
+  "../assets/img/products/PlasticModularBelt/InCline_Conveyer_Image.png"
+);
 
 // Right Wall
-createPhotoFrame(0, 6, 14.9, Math.PI, '../assets/img/room/wall_img_3.png');
+createPhotoFrame(
+  0,
+  6,
+  14.9,
+  Math.PI,
+  "../assets/img/products/Pvc/Industrial Conveyor Belt in Warehouse.png"
+);
 
 camera.position.set(990, 500, -10);
 camera.lookAt(0, 0, 0);
