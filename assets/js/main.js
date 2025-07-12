@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -53,7 +53,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -119,13 +119,13 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
       initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
@@ -134,8 +134,8 @@
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+      filters.addEventListener('click', function () {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
@@ -153,7 +153,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -171,7 +171,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -208,66 +208,90 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('/navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      const navmenu = document.getElementById('navmenu');
-      if (navmenu) {
-        navmenu.innerHTML = data;
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        const navmenu = document.getElementById('navmenu');
+        if (navmenu) {
+          navmenu.innerHTML = data;
 
-        // Initialize mobile nav toggle after navbar is loaded
-        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-        if (mobileNavToggleBtn) {
-          mobileNavToggleBtn.addEventListener('click', () => {
-            document.querySelector('body').classList.toggle('mobile-nav-active');
-            mobileNavToggleBtn.classList.toggle('bi-list');
-            mobileNavToggleBtn.classList.toggle('bi-x');
+          // Initialize mobile nav toggle after navbar is loaded
+          const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+          if (mobileNavToggleBtn) {
+            mobileNavToggleBtn.addEventListener('click', () => {
+              document.querySelector('body').classList.toggle('mobile-nav-active');
+              mobileNavToggleBtn.classList.toggle('bi-list');
+              mobileNavToggleBtn.classList.toggle('bi-x');
+            });
+          }
+
+          // Reinitialize dropdown toggles
+          document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+            navmenu.addEventListener('click', function (e) {
+              e.preventDefault();
+              this.parentNode.classList.toggle('active');
+              this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+              e.stopImmediatePropagation();
+            });
+          });
+
+          // Active link highlighting (keep your existing code)
+          const currentPath = window.location.pathname;
+          const links = navmenu.querySelectorAll('a[href]');
+          links.forEach(link => link.classList.remove('active'));
+          links.forEach(link => {
+            let href = link.getAttribute('href');
+            if (href === './' || href === '/') {
+              href = '/index.html';
+            } else if (href.startsWith('./')) {
+              href = href.substring(1);
+            }
+            let normalizedCurrentPath = currentPath;
+            if (normalizedCurrentPath === '' || normalizedCurrentPath === '/') {
+              normalizedCurrentPath = '/index.html';
+            }
+            if (href === normalizedCurrentPath || href === currentPath) {
+              link.classList.add('active');
+              let parent = link.closest('.dropdown');
+              while (parent) {
+                const parentLink = parent.querySelector('a');
+                if (parentLink) {
+                  parentLink.classList.add('active');
+                }
+                parent = parent.parentElement.closest('.dropdown');
+              }
+            }
           });
         }
+      })
+      .catch(error => console.error('Error loading navbar:', error));
 
-        // Reinitialize dropdown toggles
-        document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-          navmenu.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.parentNode.classList.toggle('active');
-            this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-            e.stopImmediatePropagation();
-          });
-        });
+    // Get Started button scroll handling
+    const getStartedBtn = document.getElementById('get-started-btn');
+    const heroSection = document.getElementById('hero-section');
 
-        // Active link highlighting (keep your existing code)
-        const currentPath = window.location.pathname;
-        const links = navmenu.querySelectorAll('a[href]');
-        links.forEach(link => link.classList.remove('active'));
-        links.forEach(link => {
-          let href = link.getAttribute('href');
-          if (href === './' || href === '/') {
-            href = '/index.html';
-          } else if (href.startsWith('./')) {
-            href = href.substring(1);
-          }
-          let normalizedCurrentPath = currentPath;
-          if (normalizedCurrentPath === '' || normalizedCurrentPath === '/') {
-            normalizedCurrentPath = '/index.html';
-          }
-          if (href === normalizedCurrentPath || href === currentPath) {
-            link.classList.add('active');
-            let parent = link.closest('.dropdown');
-            while (parent) {
-              const parentLink = parent.querySelector('a');
-              if (parentLink) {
-                parentLink.classList.add('active');
-              }
-              parent = parent.parentElement.closest('.dropdown');
-            }
-          }
-        });
-      }
-    })
-    .catch(error => console.error('Error loading navbar:', error));
-});
+    if (getStartedBtn && heroSection) {
+      // Handle button click to scroll to next section
+      getStartedBtn.addEventListener('click', () => {
+        const nextSections = document.getElementsByClassName('next-section');
+        if (nextSections.length > 0) {
+          nextSections[0].scrollIntoView({ behavior: 'smooth' });
+        }
+      });
 
-  
+      // Toggle button visibility based on scroll position
+      window.addEventListener('scroll', () => {
+        const heroRect = heroSection.getBoundingClientRect();
+        // Hide button when the hero section is scrolled past (top is above viewport)
+        const isHeroOutOfView = heroRect.top < 0;
+        if (isMobile) {
+          getStartedBtn.style.display = isHeroOutOfView ? 'none' : 'block';
+        }
+      });
+    }
+
+  });
+
 })();
 
