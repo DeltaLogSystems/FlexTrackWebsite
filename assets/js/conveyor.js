@@ -14,6 +14,9 @@ renderer.shadowMap.enabled = true;
 renderer.setClearColor(0xd3d3d3);
 document.getElementById("hero-section").appendChild(renderer.domElement);
 
+// Detect if the device is mobile
+const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 // Camera controls
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -24,7 +27,15 @@ controls.maxPolarAngle = Math.PI / 2.3;
 controls.minPolarAngle = 0;
 controls.enableZoom = false; // Disable zooming
 controls.enablePan = false; // Optional: Disable panning to keep focus on rotation only
-controls.enableRotate = true; // Explicitly enable rotation
+//controls.enableRotate = !isMobile; // Disable rotation on mobile devices
+
+// Set camera position based on device
+if (isMobile) {
+  camera.position.set(0, 10, 20); // Higher and further back for mobile
+} else {
+  camera.position.set(990, 500, -10); // Original desktop position
+}
+camera.lookAt(0, 0, 0);
 
 // Curtain rod material
 const rodMaterial = new THREE.MeshPhysicalMaterial({
@@ -1363,10 +1374,23 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-window.addEventListener("resize", () => {
+// window.addEventListener("resize", () => {
+//   camera.aspect = window.innerWidth / window.innerHeight;
+//   camera.updateProjectionMatrix();
+//   renderer.setSize(window.innerWidth, window.innerHeight);
+// });
+
+function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
+  // Update FOV based on current device (in case of orientation change)
+  camera.fov = window.innerWidth <= 768 ? 90 : 75;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-});
+}
+
+window.addEventListener("resize", onWindowResize);
+
+// Call resize handler initially to ensure correct setup
+onWindowResize();
 
 animate();

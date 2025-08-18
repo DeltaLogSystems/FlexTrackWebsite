@@ -851,14 +851,14 @@
   <main class="main">
 
     <section id="hero-section" class="hero section">
-
+      <button id="get-started-btn" class="get-started-btn"><i class="bi bi-chevron-double-down"></i></button>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services section">
-      <!-- Watermark -->
+    
+    <section id="services" class="services section next-section">
+        <!-- Watermark --> 
       <div class="watermark"></div>
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Our Business Segments</h2>
@@ -971,9 +971,36 @@
         </div>
       </div>
 
+      <style>
+        /* Vertically center modal */
+        .custom-centered-modal .modal-dialog {
+          display: flex;
+          align-items: center;
+          min-height: 100vh;
+          margin: 0 auto;
+        }
+
+        /* Limit modal height to avoid scrollbars */
+        .custom-centered-modal .modal-content {
+          max-height: 90vh;
+          overflow: hidden;
+          border-radius: 8px;
+        }
+
+        /* Prevent background scroll */
+        body.modal-open {
+          overflow: hidden;
+        }
+
+        /* Optional: Ensure modal-body content fits nicely */
+        .custom-centered-modal .modal-body {
+          overflow: auto;
+        }
+      </style>
+
       <!-- Modals -->
       <!-- Food, Bakery & Grocery Modal -->
-      <div class="modal fade" id="foodModal" tabindex="-1" aria-labelledby="foodModalLabel" aria-hidden="true">
+      <div class="modal fade custom-centered-modal" id="foodModal" tabindex="-1" aria-labelledby="foodModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-body">
@@ -1007,7 +1034,7 @@
       <!-- End Food, Bakery & Grocery Modal -->
 
       <!-- Pharmaceutical Modal -->
-      <div class="modal fade" id="pharmaModal" tabindex="-1" aria-labelledby="pharmaModalLabel" aria-hidden="true">
+      <div class="modal fade custom-centered-modal" id="pharmaModal" tabindex="-1" aria-labelledby="pharmaModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-body">
@@ -1042,7 +1069,7 @@
       <!-- End Pharmaceutical Modal -->
 
       <!-- Assembly Line Modal -->
-      <div class="modal fade" id="assemblyModal" tabindex="-1" aria-labelledby="assemblyModalLabel" aria-hidden="true">
+      <div class="modal fade custom-centered-modal" id="assemblyModal" tabindex="-1" aria-labelledby="assemblyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-body">
@@ -1073,7 +1100,7 @@
       <!-- End Assembly Line Modal -->
 
       <!-- Packaging Modal -->
-      <div class="modal fade" id="packagingModal" tabindex="-1" aria-labelledby="packagingModalLabel"
+      <div class="modal fade custom-centered-modal" id="packagingModal" tabindex="-1" aria-labelledby="packagingModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
@@ -1109,7 +1136,7 @@
       <!-- End Packaging Modal -->
 
       <!-- Automotive Modal -->
-      <div class="modal fade" id="automotiveModal" tabindex="-1" aria-labelledby="automotiveModalLabel"
+      <div class="modal fade custom-centered-modal" id="automotiveModal" tabindex="-1" aria-labelledby="automotiveModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
@@ -1145,7 +1172,7 @@
       <!-- End Automotive Modal -->
 
       <!-- Warehousing Modal -->
-      <div class="modal fade" id="warehousingModal" tabindex="-1" aria-labelledby="warehousingModalLabel"
+      <div class="modal fade custom-centered-modal" id="warehousingModal" tabindex="-1" aria-labelledby="warehousingModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
