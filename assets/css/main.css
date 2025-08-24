@@ -164,6 +164,8 @@ h6 {
   padding: 5px 0;
   transition: all 0.5s;
   z-index: 997;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
 }
 
 .header .logo {
@@ -257,7 +259,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 18px 12px;
-    font-size: 15px;
+    font-size: 16px;
     font-family: var(--nav-font);
     font-weight: 500;
     display: flex;
@@ -492,8 +494,8 @@ h6 {
 /* Listing Dropdown - Desktop */
 @media (min-width: 1200px) {
   .navmenu {
-    margin-left: 90px !important;
-    margin-right: 90px !important;
+    margin-left: 0px !important;
+    margin-right: 20px !important;
 
   }
 

@@ -80,16 +80,200 @@ function createTileTexture() {
 
 function createRoom() {
   const group = new THREE.Group();
-  const height = 12;
-  const size = 30;
+  const height = 12; // 8 meters high for industrial scale
+  const size = 30; // Larger room for conveyor systems
 
-  const wallMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-  const ceilingMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-  const floorMaterial = new THREE.MeshBasicMaterial({
-    map: createTileTexture(),
-    side: THREE.DoubleSide,
+  // Texture loader
+  const textureLoader = new THREE.TextureLoader();
+
+  // Create procedural textures for industrial materials
+  function createConcreteTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 512;
+    const ctx = canvas.getContext('2d');
+    
+    // Base concrete color
+    ctx.fillStyle = '#8a8a8a';
+    ctx.fillRect(0, 0, 512, 512);
+    
+    // Add noise and variations
+    for (let i = 0; i < 5000; i++) {
+      const x = Math.random() * 512;
+      const y = Math.random() * 512;
+      const brightness = Math.random() * 0.3;
+      ctx.fillStyle = `rgba(${Math.floor(120 + brightness * 60)}, ${Math.floor(120 + brightness * 60)}, ${Math.floor(120 + brightness * 60)}, 0.8)`;
+      ctx.fillRect(x, y, 2, 2);
+    }
+    
+    // Add concrete streaks
+    for (let i = 0; i < 20; i++) {
+      ctx.strokeStyle = `rgba(100, 100, 100, 0.3)`;
+      ctx.lineWidth = Math.random() * 3 + 1;
+      ctx.beginPath();
+      ctx.moveTo(0, Math.random() * 512);
+      ctx.lineTo(512, Math.random() * 512);
+      ctx.stroke();
+    }
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(2, 2);
+    return texture;
+  }
+
+  function createMetalTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    // Base metal color
+    ctx.fillStyle = '#666666';
+    ctx.fillRect(0, 0, 256, 256);
+    
+    // Add metal panel lines
+    ctx.strokeStyle = '#444444';
+    ctx.lineWidth = 2;
+    for (let i = 0; i < 256; i += 32) {
+      ctx.beginPath();
+      ctx.moveTo(i, 0);
+      ctx.lineTo(i, 256);
+      ctx.stroke();
+    }
+    
+    // Add scratches and wear
+    for (let i = 0; i < 50; i++) {
+      ctx.strokeStyle = `rgba(${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 100)}, 0.5)`;
+      ctx.lineWidth = Math.random() * 2;
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * 256, Math.random() * 256);
+      ctx.lineTo(Math.random() * 256, Math.random() * 256);
+      ctx.stroke();
+    }
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(4, 1);
+    return texture;
+  }
+
+  function createRoughnessMap() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    ctx.fillStyle = '#888888'; // Medium roughness
+    ctx.fillRect(0, 0, 256, 256);
+    
+    // Add variation
+    for (let i = 0; i < 1000; i++) {
+      const brightness = Math.random();
+      ctx.fillStyle = `rgba(${Math.floor(brightness * 255)}, ${Math.floor(brightness * 255)}, ${Math.floor(brightness * 255)}, 0.3)`;
+      ctx.fillRect(Math.random() * 256, Math.random() * 256, 3, 3);
+    }
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    return texture;
+  }
+
+  function createNormalMap() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    // Base normal (pointing up)
+    ctx.fillStyle = '#8080ff';
+    ctx.fillRect(0, 0, 256, 256);
+    
+    // Add surface details
+    for (let i = 0; i < 500; i++) {
+      const x = Math.random() * 256;
+      const y = Math.random() * 256;
+      ctx.fillStyle = `rgba(${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 100)}, 255, 0.5)`;
+      ctx.fillRect(x, y, 2, 2);
+    }
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    return texture;
+  }
+
+  function createTileTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    // Base concrete floor
+    ctx.fillStyle = '#606060';
+    ctx.fillRect(0, 0, 256, 256);
+    
+    // Tile grid
+    ctx.strokeStyle = '#404040';
+    ctx.lineWidth = 2;
+    for (let i = 0; i < 256; i += 64) {
+      ctx.beginPath();
+      ctx.moveTo(i, 0);
+      ctx.lineTo(i, 256);
+      ctx.stroke();
+      
+      ctx.beginPath();
+      ctx.moveTo(0, i);
+      ctx.lineTo(256, i);
+      ctx.stroke();
+    }
+    
+    // Add wear patterns
+    for (let i = 0; i < 200; i++) {
+      const brightness = Math.random() * 0.2;
+      ctx.fillStyle = `rgba(${Math.floor(80 + brightness * 60)}, ${Math.floor(80 + brightness * 60)}, ${Math.floor(80 + brightness * 60)}, 0.7)`;
+      ctx.fillRect(Math.random() * 256, Math.random() * 256, Math.random() * 4 + 1, Math.random() * 4 + 1);
+    }
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(8, 8);
+    return texture;
+  }
+
+  // Create textures
+  const concreteTexture = createConcreteTexture();
+  const metalTexture = createMetalTexture();
+  const roughnessMap = createRoughnessMap();
+  const normalMap = createNormalMap();
+  const floorTexture = createTileTexture();
+
+  // Wall materials with PBR properties
+  const wallMaterial = new THREE.MeshStandardMaterial({
+    map: concreteTexture,
+    roughnessMap: roughnessMap,
+    normalMap: normalMap,
+    roughness: 0.8,
+    metalness: 0.1,
+    side: THREE.DoubleSide
   });
 
+  // Ceiling material (metal panels)
+  const ceilingMaterial = new THREE.MeshStandardMaterial({
+    map: metalTexture,
+    roughness: 0.3,
+    metalness: 0.7,
+    side: THREE.DoubleSide
+  });
+
+  // Floor material
+  const floorMaterial = new THREE.MeshStandardMaterial({
+    map: floorTexture,
+    roughness: 0.9,
+    metalness: 0.0,
+    side: THREE.DoubleSide
+  });
+
+  // Floor
   const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(size, size),
     floorMaterial
@@ -97,6 +281,7 @@ function createRoom() {
   floor.rotation.x = -Math.PI / 2;
   group.add(floor);
 
+  // Ceiling
   const ceiling = new THREE.Mesh(
     new THREE.PlaneGeometry(size, size),
     ceilingMaterial
@@ -105,34 +290,81 @@ function createRoom() {
   ceiling.rotation.x = Math.PI / 2;
   group.add(ceiling);
 
+  // Wall geometry
   const wallGeo = new THREE.PlaneGeometry(size, height);
 
+  // Back wall
   const backWall = new THREE.Mesh(wallGeo, wallMaterial);
   backWall.position.set(0, height / 2, -size / 2);
   group.add(backWall);
 
+  // Front wall
   const frontWall = new THREE.Mesh(wallGeo, wallMaterial);
   frontWall.position.set(0, height / 2, size / 2);
   frontWall.rotation.y = Math.PI;
   group.add(frontWall);
 
+  // Left wall
   const leftWall = new THREE.Mesh(wallGeo, wallMaterial);
   leftWall.position.set(-size / 2, height / 2, 0);
   leftWall.rotation.y = Math.PI / 2;
   group.add(leftWall);
 
+  // Right wall
   const rightWall = new THREE.Mesh(wallGeo, wallMaterial);
   rightWall.position.set(size / 2, height / 2, 0);
   rightWall.rotation.y = -Math.PI / 2;
   group.add(rightWall);
 
+  // Add industrial lighting fixtures
+  function createLightFixture(x, z) {
+    const fixtureGroup = new THREE.Group();
+    
+    // Main fixture body
+    const fixtureGeometry = new THREE.BoxGeometry(2, 0.3, 2);
+    const fixtureMaterial = new THREE.MeshStandardMaterial({
+      color: 0x333333,
+      metalness: 0.8,
+      roughness: 0.2
+    });
+    const fixture = new THREE.Mesh(fixtureGeometry, fixtureMaterial);
+    fixture.position.y = height - 0.5;
+    fixtureGroup.add(fixture);
+    
+    // Light bulb cover
+    const coverGeometry = new THREE.CylinderGeometry(0.8, 0.8, 0.2, 16);
+    const coverMaterial = new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.8,
+      emissive: 0x222222
+    });
+    const cover = new THREE.Mesh(coverGeometry, coverMaterial);
+    cover.position.y = height - 0.7;
+    fixtureGroup.add(cover);
+    
+    fixtureGroup.position.set(x, 0, z);
+    return fixtureGroup;
+  }
+
+  // Add multiple light fixtures
+  const fixtures = [
+    createLightFixture(-size/4, -size/4),
+    createLightFixture(size/4, -size/4),
+    createLightFixture(-size/4, size/4),
+    createLightFixture(size/4, size/4)
+  ];
+  fixtures.forEach(fixture => group.add(fixture));
+ 
   scene.add(group);
+ 
 }
+ 
 
 function createPhotoFrame(x, y, z, rotationY, imagePath) {
   const frameGroup = new THREE.Group();
-  const frameWidth = 12;
-  const frameHeight = 6;
+  const frameWidth = 19;
+  const frameHeight = 9;
   const frameThickness = 0.3;
 
   const frameGeometry = new THREE.BoxGeometry(
